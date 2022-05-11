@@ -74,6 +74,8 @@ class Agendamento3DiasController extends Controller
     }
 
 
+
+
      public function store(StoreAgendamento_3_diasRequest $request)
     {
         
@@ -83,24 +85,41 @@ class Agendamento3DiasController extends Controller
             $agendamento_3_dias->dia3=$request->dia3;
             $agendamento_3_dias->qtd_dias_id=$request->qtd_dias_id;
             $agendamento_3_dias->empresa_id=$request->empresa_id;
+            $agendamento_3_dias->endereco_empresas_id=$request->endereco_empresas_id;
             $agendamento_3_dias->automovel_id=$request->automovel_id;
 
             $feriado=Feriado::get();
             $quinze_dias=Agendamento_15_dias::get();
-            $agendamento_3_dias1=agendamento_3_dias::get();
+            $agendamento_3_dias1= Agendamento_3_dias::join('automovels as a','a.id','=','agendamento_3_dias.automovel_id')
+                                    ->where('a.id',$request->automovel_id)->get();
+
             $automovel=Automovel::get();
 
-
+            $qtd_r = 0;
              foreach($agendamento_3_dias1 as $agend_3_dias){
 
-                 if(($agend_3_dias->data == $request->dia1) or ($agend_3_dias->data == $request->dia2) or ($agend_3_dias->data == $request->dia3) ){
+                 if(($agend_3_dias->dia1 == $request->dia1) or ($agend_3_dias->dial2 == $request->dia1) or ($agend_3_dias->dia3== $request->dia1) ){
                     
-                    return "agendado";
+                    $qtd_r++;
             
                   }
 
+                  if(($agend_3_dias->dia1 == $request->dia2) or ($agend_3_dias->dial2 == $request->dia2) or ($agend_3_dias->dia3== $request->dia2) ){
+                    
+                    $qtd_r++;
+            
+                  }
 
+                  if(($agend_3_dias->dia1 == $request->dia3) or ($agend_3_dias->dial2 == $request->dia3) or ($agend_3_dias->dia3== $request->dia3) ){
+                    
+                    $qtd_r++;
+            
+                  }
              } 
+
+             if ($qtd_r > 0) {
+                 return 'Já agendado';
+             }
            
 
             foreach($feriado as $feriad) 
@@ -122,11 +141,10 @@ class Agendamento3DiasController extends Controller
 
             $agendamento_3_dias->save();
 
-             $contrato = Contrato::join('empresas as ee','ee.id','=','contratos.empresa_id')
-                ->join('users', 'users.id','=','ee.user_id')->where('users.id', auth()->user()->id)
-                ->join('endereco_empresas','endereco_empresas.id','=','contratos.endereco_empresa_id')
-                ->join('automovels','automovels.id','=','contratos.automovel_id')
-                ->join('agendamento_3_dias','agendamento_3_dias.id','=','contratos.agendamento_3_dias_id')->get();
+             $contrato = Agendamento_3_dias::join('empresas as ee','ee.id','=','agendamento_3_dias.empresa_id')
+            ->join('users', 'users.id','=','ee.user_id')->where('users.id', auth()->user()->id )
+            ->join('endereco_empresas','endereco_empresas.id','=','agendamento_3_dias.empresa_id')
+            ->join('automovels','automovels.id','=','agendamento_3_dias.automovel_id')->get();
 
             
                 $id = $agendamento_3_dias->id;

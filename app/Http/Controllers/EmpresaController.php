@@ -42,8 +42,11 @@ class EmpresaController extends Controller
        
         $empresa=Empresa::all();
         $enderecoempresa=EnderecoEmpresa::join('empresas','endereco_empresas.id','=','empresas.id')
-        ->join('users', 'users.id','=','empresas.user_id')->where('users.id', auth()->user()->id)->select('endereco_empresas.*')->get();
-
+        ->join('users', 'users.id','=','empresas.user_id')->where('users.id', auth()->user()->id)
+        ->select('endereco_empresas.id as endereco_id',
+                'empresas.id as empresa_id',
+                'users.id as user_id',
+                'empresas.*','users.*','endereco_empresas.*')->get();
 
        
         return view('qtd_dias.create',compact('empresa','enderecoempresa'));
@@ -72,7 +75,6 @@ class EmpresaController extends Controller
         $empresa->email=$request->email;
         $empresa['user_id'] = auth()->user()->id;
         $empresa->save();
-        dd($empresa);
         $id = $empresa->id;
                  
          

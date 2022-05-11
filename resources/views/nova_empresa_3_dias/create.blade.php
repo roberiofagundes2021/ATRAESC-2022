@@ -85,28 +85,21 @@
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
       
-      <ul class="app-menu">
-      <img src="{{ URL::asset('img/agendar_aula.jpg'); }}"
+     <ul class="app-menu">
+        <img src="{{ URL::asset('img/agendar_aula.jpg'); }}"
         style="width:350px; height:150px;"><br></a>
-        <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Home</span></a>
+        <li><a class="app-menu__item" href="{{route('Cliente.create')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">agendar aula</span></a></li>
+         <img src="{{ URL::asset('img/clientes.jpg'); }}"
+        style="width:350px; height:150px;"><br></a>
+        <li><a class="app-menu__item" href="{{route('Cliente.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Cliente</span></a></li>
+        <li><a class="app-menu__item" href="{{route('Empresa.create')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Alugar carro</span></a>
         </li>
-
-        <li><a class="app-menu__item" href="{{route('Automovel_atraesc.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Empresa</span></a>
+        <li><a class="app-menu__item" href="{{route('Instrutor.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Instrutor</span></a>
         </li>
-
-        <li><a class="app-menu__item" href="{{route('Automovel_atraesc.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Carro</span></a>
         </li>
-
-         <li><a class="app-menu__item" href="{{route('feriado.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Dias não uteis</span></a>
+        <li><a class="app-menu__item" href="{{route('Empresa')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">empresa
+        </span></a>
         </li>
-
-         <li><a class="app-menu__item" href="{{route('Agendamento3Dias.index')}}"><i class=""></i><span class="app-menu__label">agendamentos de 3 dias</span></a>
-        </li>
-
-
-          <li><a class="app-menu__item" href="{{route('Agendamento15Dias.index')}}"><i class=""></i><span class="app-menu__label">agendamentos de 15 dias</span></a>
-        </li>
-
       </ul>
     </aside>
     <main class="app-content">
@@ -120,37 +113,91 @@
     <x-app-layout>
  
         <x-slot name="header">
-           <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <h2></h2><br>
-             <form action="{{route('Empresa.update', ['id' => $Empresa->id])}}" method="post">
-        @csrf
-        @method('PUT')
-        <label for="nome">razão social</label>
-        {{-- Form Section 1 --}}
-        <input type="text" name="razao_social" class="form-control" value="{{$Empresa->razao_social}}">
-                
-        <label>CNPJ</label>
-        <input type="text" class="form-control" name="cnpj" value="{{$Empresa->cnpj}}">    
-                
-        <label>solicitante</label><br>
-        <input type="text" class="form-control" name="solicitante" value="{{$Empresa->solicitante}}"><br>
-                
-        <label>telefone</label><br>
-        <input type="text" class="form-control" name="telefone" value="{{$Empresa->telefone}}"><br>
-
-        <label>email</label><br>
-        <input type="text" class="form-control" name="email" value="{{$Empresa->email}}"><br>
-                
-                
-         <input type="submit" class="btn btn-primary" value="alterar">
-        
-  
-  </form>
                        
+           
                       
         </x-slot>
 
-       
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            <h2></h2><br>
+            <form action="{{route('Agendamento3Dias.store')}}" method="post"             enctype="multipart/form-data">
+                @csrf
+                   @if($errors->any())
+                        <div class="alert alert-danger">
+                       
+                            @foreach($errors->all() as $error)
+
+                                <label>{{$error}}</label><br>
+                            @endforeach
+                        
+                        </div>
+
+                    @endif
+
+                    <div class="m-5">
+        @if (session('sucesso'))
+            <div class="alert alert-success">
+                <h2>{{ session('sucesso') }}</h2>
+            </div>
+        @endif
+    </div>
+
+ @if(Session::has('message'))
+<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+@endif
+                   
+
+
+                <div class="mb-3">
+                    <div class="pull-right">
+                       
+                        <a class="btn btn-primary" href="{{route('dashboard')}}">Voltar</a>
+                    </div>
+                         
+                       
+                            <label for="formGroupExampleInput" class="form-label">Primeiro dia </label><br>
+                            <input type="date" name="dia1" placeholder="digite o dia inicial que você vai agendar"><br>
+
+                             <label for="formGroupExampleInput" class="form-label">Segundo dia </label><br>
+                            <input type="date" name="dia2" placeholder="digite o dia inicial que você vai agendar"><br>
+
+                            <label for="formGroupExampleInput" class="form-label">Terceiro dia </label><br>
+                            <input type="date" name="dia3" placeholder="digite o dia inicial que você vai agendar"><br>
+
+                           
+
+                             
+                           
+
+                             <label for="carro">carro</label>
+                            {{-- pega a variavel passada pelo metodo create do controller --}}
+                            
+                              <select name="automovel_id" class="form-control">
+                                @foreach($automovel as $automovel)
+                                <option value="{{old('automovel_id', $automovel->id)}}"> 
+                                  {{$automovel->modelo}} 
+                                </option>
+                                @endforeach
+                              </select>
+                           
+
+
+                             <label>empresas</label>
+                             <input type="text" name="empresa_id" value="{{$empresa_id}}"><br><br>
+                             
+
+                             <label>enderecos_empresas</label>
+                             <input type="text" name="endereco_empresas_id" value="{{$id}}">
+                            <button type="submit" class="btn btn-primary">Adicionar</button>
+
+                            
+                    </div>
+                  
+                </div><br>
+                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                    
+                </div>
+            </form>
                     
         
                     
