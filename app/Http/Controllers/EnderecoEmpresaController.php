@@ -38,7 +38,7 @@ class EnderecoEmpresaController extends Controller
         $enderecoempresa = EnderecoEmpresa::get();
       
         return view('endereco_empresa.create',compact('enderecoempresa'));
-        }
+    }
     
 
    
@@ -62,7 +62,7 @@ class EnderecoEmpresaController extends Controller
             $empresa_id = $enderecoempresa->empresa_id;
             $automovel=Automovel::get();
                         
-            return view('3_dias.create', compact('empresa_id','automovel','id'))
+            return view('nova_empresa_3_dias.create', compact('empresa_id','automovel','id'))
                         ->with('success',' criador com successo.');
         
         }

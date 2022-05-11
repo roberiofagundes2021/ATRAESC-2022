@@ -23,6 +23,7 @@ use App\Http\Controllers\QtdDiasController;
 use App\Http\Controllers\AtraescController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -245,26 +246,6 @@ Route::get('/Cliente/edit/{id}',[ClienteController::class,'edit'])->middleware([
 
 //----------------------------------------------------------------------------------
 
-Route::get('/index/documentos',[DocumentosController::class,'index'])->middleware(['auth'])->name('documentos.index');
-
-Route::get('/create/documentos',[DocumentosController::class,'create'])->middleware(['auth'])->name('documentos.create');
-
-Route::post('/create/documentos',[DocumentosController::class,'create'])->middleware(['auth'])->name('documentos.create');
-
-Route::post('/store/documentos',[DocumentosController::class,'store'])->middleware(['auth'])->name('documentos.store');
-
-Route::get('/store/documentos',[DocumentosController::class,'store'])->middleware(['auth'])->name('documentos.store');
-
-Route::get('/documentos/show/{id}',[DocumentosController::class,'show'])->middleware(['auth'])->name('documentos.show');
-
-Route::put('/documentos/update/{id}',[DocumentosController::class,'update'])->middleware(['auth'])->name('documentos.update');
-
-Route::delete('/documentos/{id}',[DocumentosController::class, 'destroy'])->middleware(['auth'])->name('documentos.delete');
-
-
-//----------------------------------------------------------------------------------
-
-
 
 Route::get('/index/ContatoCliente',[ContatoClienteController::class,'index'])->middleware(['auth'])->name('ContatoCliente');
 
@@ -305,9 +286,12 @@ Route::delete('/EnderecoCliente/{id}',[EnderecoClienteController::class, 'destro
 
 Route::get('/index/Empresa',[EmpresaController::class,'index'])->middleware(['auth'])->name('Empresa');
 
-Route::post('/index/alugar_carro',[EmpresaController::class,'alugar_carro'])->middleware(['auth'])->name('alugar_carro');
+Route::post('/index/alugar_carro/{idemp}',[EmpresaController::class,'alugar_carro'])->middleware(['auth'])->name('alugar_carro');
+Route::get('/index/alugar_carro/{idemp}',[EmpresaController::class,'alugar_carro'])->middleware(['auth'])->name('alugar_carro');
 
 Route::get('/create/Empresa',[EmpresaController::class,'create'])->middleware(['auth'])->name('Empresa.create');
+
+
 
 Route::post('/create/Empresa',[EmpresaController::class,'create'])->middleware(['auth'])->name('Empresa.create');
 

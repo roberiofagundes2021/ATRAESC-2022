@@ -214,7 +214,11 @@
 
 
 
-                            <input type="hidden" name="empresa_id" value="{{$empresa_id}}"><br><br>
+                            <label>endereco empresas</label>
+                             <input type="text" name="endereco_empresas_id" value="{{ $enderecoempresa->id }}"><br><br>
+                             
+                              <label>empresas</label>
+                               <input type="text" name="empresa_id" class="form-control" value="{{ $empresa->id }}">
 
 
                           <button type="submit" class="btn btn-primary">Adicionar</button>

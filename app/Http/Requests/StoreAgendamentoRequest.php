@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreAgendamentoRequest extends FormRequest
 {
-    /public function authorize()
+    public function authorize()
     {
         return TRUE;
     }
