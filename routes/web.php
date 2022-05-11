@@ -23,6 +23,7 @@ use App\Http\Controllers\QtdDiasController;
 use App\Http\Controllers\AtraescController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,9 +64,12 @@ Route::get('/create/Agendamento3Dias',[Agendamento3DiasController::class,'create
 
 Route::post('/create/Agendamento3Dias',[Agendamento3DiasController::class,'create'])->middleware(['auth'])->name('Agendamento3Dias.create');
 
+
 Route::post('/store/Agendamento3Dias',[Agendamento3DiasController::class,'store'])->middleware(['auth'])->name('Agendamento3Dias.store');
 
 Route::get('/store/Agendamento3Dias',[Agendamento3DiasController::class,'store'])->middleware(['auth'])->name('Agendamento3Dias.store');
+
+
 
 Route::get('/Agendamento3Dias/show/{id}',[Agendamento3DiasController::class,'show'])->middleware(['auth'])->name('Agendamento3Dias.show');
 
@@ -245,26 +249,6 @@ Route::get('/Cliente/edit/{id}',[ClienteController::class,'edit'])->middleware([
 
 //----------------------------------------------------------------------------------
 
-Route::get('/index/documentos',[DocumentosController::class,'index'])->middleware(['auth'])->name('documentos.index');
-
-Route::get('/create/documentos',[DocumentosController::class,'create'])->middleware(['auth'])->name('documentos.create');
-
-Route::post('/create/documentos',[DocumentosController::class,'create'])->middleware(['auth'])->name('documentos.create');
-
-Route::post('/store/documentos',[DocumentosController::class,'store'])->middleware(['auth'])->name('documentos.store');
-
-Route::get('/store/documentos',[DocumentosController::class,'store'])->middleware(['auth'])->name('documentos.store');
-
-Route::get('/documentos/show/{id}',[DocumentosController::class,'show'])->middleware(['auth'])->name('documentos.show');
-
-Route::put('/documentos/update/{id}',[DocumentosController::class,'update'])->middleware(['auth'])->name('documentos.update');
-
-Route::delete('/documentos/{id}',[DocumentosController::class, 'destroy'])->middleware(['auth'])->name('documentos.delete');
-
-
-//----------------------------------------------------------------------------------
-
-
 
 Route::get('/index/ContatoCliente',[ContatoClienteController::class,'index'])->middleware(['auth'])->name('ContatoCliente');
 
@@ -305,9 +289,12 @@ Route::delete('/EnderecoCliente/{id}',[EnderecoClienteController::class, 'destro
 
 Route::get('/index/Empresa',[EmpresaController::class,'index'])->middleware(['auth'])->name('Empresa');
 
-Route::post('/index/alugar_carro',[EmpresaController::class,'alugar_carro'])->middleware(['auth'])->name('alugar_carro');
+Route::post('/index/alugar_carro/{idemp}',[EmpresaController::class,'alugar_carro'])->middleware(['auth'])->name('alugar_carro');
+Route::get('/index/alugar_carro/{idemp}',[EmpresaController::class,'alugar_carro'])->middleware(['auth'])->name('alugar_carro');
 
 Route::get('/create/Empresa',[EmpresaController::class,'create'])->middleware(['auth'])->name('Empresa.create');
+
+
 
 Route::post('/create/Empresa',[EmpresaController::class,'create'])->middleware(['auth'])->name('Empresa.create');
 
@@ -414,8 +401,6 @@ Route::get('/create/qtd_dias/{id}',[QtdDiasController::class,'create'])->middlew
 Route::post('/create/qtd_dias/{id}',[QtdDiasController::class,'create'])->middleware(['auth'])->name('qtd_dias.create');
 
 Route::post('/store/qtd_dias',[QtdDiasController::class,'store'])->middleware(['auth'])->name('qtd_dias.store');
-
-Route::get('/store/qtd_dias',[QtdDiasController::class,'store'])->middleware(['auth'])->name('qtd_dias.store');
 
 Route::get('/qtd_dias/show/{id}',[QtdDiasController::class,'show'])->middleware(['auth'])->name('qtd_dias.show');
 

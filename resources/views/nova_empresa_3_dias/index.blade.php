@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/main.css')}}">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     
   </head>
   <body class="app sidebar-mini">
@@ -85,72 +86,100 @@
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
       
-      <ul class="app-menu">
-      <img src="{{ URL::asset('img/agendar_aula.jpg'); }}"
+     <ul class="app-menu">
+       <img src="{{ URL::asset('img/agendar_aula.jpg'); }}"
         style="width:350px; height:150px;"><br></a>
-        <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Home</span></a>
+        <li><a class="app-menu__item" href="#"><i class=""></i><span class="app-menu__label">Home</span></a>
         </li>
 
-        <li><a class="app-menu__item" href="{{route('Automovel_atraesc.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Empresa</span></a>
+        <li><a class="app-menu__item" href="{{route('EmpresaAtraesc')}}"><i class=""></i><span class="app-menu__label">Empresa</span></a>
         </li>
 
-        <li><a class="app-menu__item" href="{{route('Automovel_atraesc.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Carro</span></a>
+        <li><a class="app-menu__item" href="{{route('Automovel_atraesc.index')}}"><i class=""></i><span class="app-menu__label">Carro</span></a>
         </li>
 
-         <li><a class="app-menu__item" href="{{route('feriado.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Dias não uteis</span></a>
+         <li><a class="app-menu__item" href="{{route('feriado.index')}}"><i class=""></i><span class="app-menu__label">Dias não uteis</span></a>
         </li>
 
-         <li><a class="app-menu__item" href="{{route('Agendamento3Dias.index')}}"><i class=""></i><span class="app-menu__label">agendamentos de 3 dias</span></a>
+          <li><a class="app-menu__item" href="{{route('Agendamento3Dias.index')}}"><i class=""></i><span class="app-menu__label">agendamentos de 3 dias</span></a>
         </li>
 
 
           <li><a class="app-menu__item" href="{{route('Agendamento15Dias.index')}}"><i class=""></i><span class="app-menu__label">agendamentos de 15 dias</span></a>
         </li>
-
       </ul>
     </aside>
     <main class="app-content">
       <div class="app-title">
         <div>
-         
-        </div>
-      
-      </div>
-      
-    <x-app-layout>
+          <x-app-layout>
+            <table class="table table-sm">
+
+                @foreach($agendamento_3_dias as $agen3dias)
+                <thead>
+                  <tr>
+                  <th>empresa</th>                    
+                  <th> dia 1</th><br>
+                  <th> dia 2</th>
+                  <th> dia 3</th>
+                
+                   <th>data e hora que foi agendado</th>
+
+                   <th></th>
+                   <th></th>
+                   <th></th>
+                  </tr>
+                </thead>
+
+                <thead>
+                  <td>{{$agen3dias->razao_social}}</td>
+                  <td>{{$agen3dias->dia1}}</td>
+                  <td>{{$agen3dias->dia2}}</td>
+                  <td>{{$agen3dias->dia3}}</td>
+                   <td>{{$agen3dias->created_at}}</td>                 
+
+
+                
+                  @endforeach  
+                </thead>
+            </table>
+
+              
+            </div>        
  
         <x-slot name="header">
-           <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <h2></h2><br>
-             <form action="{{route('Empresa.update', ['id' => $Empresa->id])}}" method="post">
-        @csrf
-        @method('PUT')
-        <label for="nome">razão social</label>
-        {{-- Form Section 1 --}}
-        <input type="text" name="razao_social" class="form-control" value="{{$Empresa->razao_social}}">
-                
-        <label>CNPJ</label>
-        <input type="text" class="form-control" name="cnpj" value="{{$Empresa->cnpj}}">    
-                
-        <label>solicitante</label><br>
-        <input type="text" class="form-control" name="solicitante" value="{{$Empresa->solicitante}}"><br>
-                
-        <label>telefone</label><br>
-        <input type="text" class="form-control" name="telefone" value="{{$Empresa->telefone}}"><br>
-
-        <label>email</label><br>
-        <input type="text" class="form-control" name="email" value="{{$Empresa->email}}"><br>
-                
-                
-         <input type="submit" class="btn btn-primary" value="alterar">
-        
-  
-  </form>
-                       
-                      
+              
+         
+            
+                                  
         </x-slot>
 
-       
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            <h2></h2><br>
+         
+             
+                      
+        
+    </div>
+        </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                            
+
+
+                            
+
+                            
+                    </div>
+                  
+                </div><br>
+                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                    
+                </div>
+            </form>
                     
         
                     
@@ -168,6 +197,10 @@
         </div>
     </div>
 </div>
+         
+        </div>
+      
+      </div>
 <div class="tile-footer">
    
   </div>

@@ -22,25 +22,22 @@ class PdfController extends Controller
 
     public function index()
     {
+        
+
+        $contrato = Agendamento_3_dias::join('empresas as ee','ee.id','=','agendamento_3_dias.empresa_id')
+            ->join('users', 'users.id','=','ee.user_id')->where('users.id', auth()->user()->id)
+            ->join('endereco_empresas','endereco_empresas.id','=','agendamento_3_dias.empresa_id')
+            ->join('automovels','automovels.id','=','agendamento_3_dias.automovel_id')->get();
+
+
+            return view('pdf.pdf', compact('contrato'))->with('success',' criador com successo.');
+
         /*
-        $empresa = Empresa::all();
-        $agendamento = Agendamento::all();
-        $automovel = Automovel::all();
-        $enderecoempresa = EnderecoEmpresa::all();
-        $agendamento_15_dias = Agendamento_15_dias::all();
-        $cliente = Cliente::get();
-        */
-
-        $contrato = Contrato::join('empresas as ee','ee.id','=','contratos.empresa_id')
-                ->join('users', 'users.id','=','ee.user_id')->where('users.id', auth()->user()->id)
-                ->join('endereco_empresas','endereco_empresas.id','=','contratos.endereco_empresa_id')
-                ->join('automovels','automovels.id','=','contratos.automovel_id')
-                ->join('agendamento_3_dias','agendamento_3_dias.id','=','contratos.agendamento_3_dias_id')->get();
-
-
+        para baixar pdf 
         return \PDF::loadView('pdf.pdf', compact('contrato'))
                 // Se quiser que fique no formato a4 retrato: ->setPaper('a4', 'landscape')
                 ->download('contrato_de_locação-pdf-gerado.pdf');
+        */
 
     }
 }

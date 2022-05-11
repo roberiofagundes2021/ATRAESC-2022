@@ -34,8 +34,6 @@ class QtdDiasController extends Controller
         //
          $qtd_dias=Qtd_dias::get();
          $enderecoempresa=EnderecoEmpresa::findorFail($id);
-
-        dd($enderecoempresa);
       
     
         return view('qtd_dias.create', ['enderecoempresa' => $enderecoempresa]);
@@ -50,44 +48,31 @@ class QtdDiasController extends Controller
      */
    public function store(Request $request)
     {
-        //
+    
         $qtd_dias = new Qtd_dias(); 
         $qtd_dias->qtd_dias_agendado=$request->qtd_dias_agendado;
         $qtd_dias->empresa_id=$request->empresa_id;
         $qtd_dias->save();
 
+        $id = $qtd_dias->id;
+        $automovel=Automovel::get();
+        $empresa = Empresa::where('id',$request->empresa_id)->first();
+        $enderecoempresa = EnderecoEmpresa::where('empresa_id', $empresa->id)->first();
+
+        
+
         if($request->qtd_dias_agendado=="3 dias"){
-            $id = $qtd_dias->id;
-            $empresa_id = $qtd_dias->empresa_id;
-            $automovel=Automovel::get();
-            $enderecoempresa=EnderecoEmpresa::all();
-      
-     
-        
-      
 
-            
-
-            
-
-       
-
-            return view('3_dias.create', compact('id','empresa_id','automovel','enderecoempresa'))->with('message', 'Produto gravado com sucesso!');
-
-                        dd($enderecoempresa);
-
-
-        
+             
+              return view('3_dias.create', compact('id','empresa','automovel','enderecoempresa'))
+                        ->with('success','Hotel criador com successo.');
         }
         
         if($request->qtd_dias_agendado=="15 dias"){
-            $id = $qtd_dias->id;
-            $empresa_id = Request::query('id');
-            $automovel=Automovel::get();
-                        
-            return view('15_dias.create', compact('id','empresa_id','automovel'))
-                        ->with('success','Hotel criador com successo.');
         
+                 
+            return view('15_dias.create', compact('id','empresa','automovel','enderecoempresa'))
+                        ->with('success','Hotel criador com successo.');
         }
 
 

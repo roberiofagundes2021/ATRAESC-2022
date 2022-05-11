@@ -121,6 +121,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             <h2></h2><br>
             <form action="{{route('Agendamento3Dias.store')}}" method="post"             enctype="multipart/form-data">
+                @method('POST')
                 @csrf
                    @if($errors->any())
                         <div class="alert alert-danger">
@@ -133,19 +134,8 @@
                         </div>
 
                     @endif
-
-                    <div class="m-5">
-        @if (session('sucesso'))
-            <div class="alert alert-success">
-                <h2>{{ session('sucesso') }}</h2>
-            </div>
-        @endif
-    </div>
-
- @if(Session::has('message'))
-<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
-@endif
-                   
+                    
+                  @include('alert.alert')
 
 
                 <div class="mb-3">
@@ -155,7 +145,7 @@
                     </div>
                          
                        
-                            <label for="formGroupExampleInput" class="form-label">Primeiro dia </label><br>
+                            <label for="formGroupExampleInput" class="form-label">Primeiro dia</label><br>
                             <input type="date" name="dia1" placeholder="digite o dia inicial que você vai agendar"><br>
 
                              <label for="formGroupExampleInput" class="form-label">Segundo dia </label><br>
@@ -182,8 +172,11 @@
                            
 
 
-                            
-                             <input type="text" name="empresa_id" value="{{$empresa_id}}"><br><br>
+                             <label>endereco empresas</label>
+                             <input type="text" name="endereco_empresas_id" value="{{ $enderecoempresa->id }}"><br><br>
+                             
+                              <label>empresas</label>
+                               <input type="text" name="empresa_id" class="form-control" value="{{ $empresa->id }}">
 
                              <input type="text" name="qtd_dias_id" value="{{$id}}">
                             <button type="submit" class="btn btn-primary">Adicionar</button>

@@ -120,7 +120,9 @@
             <h2></h2><br>
             @foreach($enderecoempresa as $endfk)
            
-              <form action="{{route('qtd_dias.store', ['endfk' => $endfk->id])}}" method="post">
+              <form action="{{route('qtd_dias.store')}}" 
+                method="post">
+                @method('POST')
                 @csrf
                
                    @if($errors->any())
@@ -138,7 +140,7 @@
                      @endforeach
                       
 
-                   {{$endfk->id}}
+          
 
                 <div class="mb-3">
                     <div class="pull-right">
@@ -158,10 +160,8 @@
                   
                     <label for="nome">razão social</label>
                     {{-- Form Section 1 --}}
-                              <input type="text" name="empresa_id" class="form-control" value="@php 
-
-                        echo $_GET['id'];
-                      @endphp">
+                      <input type="text" name="empresa_id" 
+                      class="form-control" value="{{ Request::segment(3) }}">
 
                       
 

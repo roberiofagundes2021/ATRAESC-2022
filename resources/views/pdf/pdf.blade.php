@@ -24,7 +24,7 @@
               @endif
 
   
-            @foreach($contrato as $contrat)
+     
                 <p class="texto" style="text-align:justify;">
                
                     <img src="{{ URL::asset('images/logo_contrato.png'); }}"><br>
@@ -37,9 +37,9 @@
                     19.026.372/0001-15, com sede na Rua Itaipú, n° 140, Itacorubi, Florianópolis/SC neste
                     ato representado por sua Presidente YOMARA JULITA RIBEIRO, brasileira,  empresária,
                     inscrita no RG sob o nº 2975428 SSP/SC, e CPF nº 007.989.699-54;
-                    CONTRATANTE CESSIONÁRIA:{{$contrat->razao_social}}, pessoa jurídica de direito privado,
-                    devidamente  inscrita no CNPJ sob nº{{$contrat->cnpj}}, com endereço na {{$contrat->rua}},
-                    {{$contrat->bairro}}, {{$contrat->cidade}}, {{$contrat->estado}}, neste ato representada por: {{$contrat->solicitante}} <br><br> 
+                    CONTRATANTE CESSIONÁRIA:{{$contrato->razao_social}}, pessoa jurídica de direito privado,
+                    devidamente  inscrita no CNPJ sob nº{{$contrato->cnpj}}, com endereço na {{$contrato->rua}},
+                    {{$contrato->bairro}}, {{$contrato->cidade}}, {{$contrato->estado}}, neste ato representada por: {{$contrato->solicitante}} <br><br> 
 
                     As partes acima identificadas têm, entre si, justo e acertado o presente Contrato de
                     Cessão de Direito para uso de Automóvel de Prazo Determinado, que se regerá pelas
@@ -48,7 +48,7 @@
                     <h3><b><p class="texto" style="text-align:justify;">DO OBJETO DO CONTRATO</b></h3>
                      <p class="texto" style="text-align:justify;">
                     <b>Cláusula 1ª.</b> O presente contrato tem como OBJETO a cessão de uso do automóvel
-                    marca {{$contrat->marca}}, modelo {{$contrat->modelo}}, ano {{$contrat->ano}}, cor {{$contrat->cor}}, placa {{$contrat->placa}}  veiculo adaptado
+                    marca {{$contrato->marca}}, modelo {{$contrato->modelo}}, ano {{$contrato->ano}}, cor {{$contrato->cor}}, placa {{$contrato->placa}}  veiculo adaptado
                     para atender portadores de deficiências especiais, de propriedade da CESSIONÁRIA.
 
                     Parágrafo Único: será entregue juntamente com o veículo, os comandos de adaptação
@@ -141,7 +141,7 @@
                     DO PRAZO<br><br>
 
                     <b>Cláusula 5ª.</b> O presente contrato de cessão terá o lapso temporal de validade de 3 dias,
-                    iniciando no dia <b>{{$contrat->dia1}}</b>   e terminando no dia <b>{{$contrat->dia3}}</b>  data na qual o automóvel
+                    iniciando no dia <b>{{ date('d/m/Y', strtotime($contrato->dia1))}}</b>   e terminando no dia <b>{{ date('d/m/Y', strtotime($contrato->dia3))}}</b>  data na qual o automóvel
                     deverá ser devolvido.
 
                     <b>Cláusula 6ª.</b> Se a <b>CESSIONÁRIA</b> não restituir o automóvel na data estipulada e os itens
@@ -181,7 +181,7 @@
                     Por estarem assim justos e contratados, firmam o presente instrumento, em duas vias de
                     igual teor, juntamente com 2 (duas) testemunhas.
 
-                                <p align="right"><b>Florianópolis, {{$contrat->created_at}}</b></p>
+                                <p align="right"><b>Florianópolis, {{$contrato->created_at}}</b></p>
                                  <p class="texto" style="text-align:justify;">
                                  <img src="{{ URL::asset('images/assinatura.png'); }}"><br>
                                  ATRAESC: YOMARA JULITA RIBEIRO<br><br><br>
@@ -190,7 +190,7 @@
 
 
                                  ________________________________________________<br>
-                                 CESSIONÁRIO:{{$contrat->razao_social}}<br><br>
+                                 CESSIONÁRIO:{{$contrato->razao_social}}<br><br>
                 
                                  TESTEMUNHAS:<br>
                                  ________________________________________________<br>
@@ -220,7 +220,7 @@
                   
                     www.atraesc.com.br                       
               
-            @endforeach
+   
             
      
 

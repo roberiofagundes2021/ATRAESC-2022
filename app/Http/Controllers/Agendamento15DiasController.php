@@ -6,6 +6,7 @@ use App\Http\Requests\StoreAgendamento_15_diasRequest;
 use App\Models\Agendamento_15_dias;
 use App\Models\Contrato;
 use App\Models\Feriado;
+use DB;
 
 class Agendamento15DiasController extends Controller
 {
@@ -17,6 +18,13 @@ class Agendamento15DiasController extends Controller
     public function index()
     {
         //
+        $agendamento_15_dias = DB::table('empresas')
+            ->join('agendamento_3_dias', 'empresas.id', '=', 'agendamento_15_dias.empresa_id')->get();
+
+
+
+        return view('15_dias.index',compact('agendamento_15_dias'));
+
     }
 
     /**
@@ -61,25 +69,21 @@ class Agendamento15DiasController extends Controller
         $Agendamento_15_dias->empresa_id=$request->empresa_id;
         $Agendamento_15_dias->automovel_id=$request->automovel_id;
 
-         $feriado=Feriado::get();
-
-        foreach($feriado as $feriad) 
-        {
-            if(($feriad->data == $request->dia1) or ($feriad->data == $request->dia2) or ($feriad->data == $request->dia3) or ($feriad->data == $request->dia4) or ($feriad->data == $request->dia5) or ($feriad->data == $request->dia6) or ($feriad->data == $request->dia7) or ($feriad->data == $request->dia8) or ($feriad->data == $request->dia9) or ($feriad->data == $request->dia10) or ($feriad->data == $request->dia11) or ($feriad->data == $request->dia12) or ($feriad->data == $request->dia13) or ($feriad->data == $request->dia14) or ($feriad->data == $request->dia15));
-            
-              return redirect()->route('Agendamento15Dias.create')->with('mensagem', 'Agendamento cadastrado com sucesso!');
-        }
-
         $Agendamento_15_dias->save();
 
-         $contrato = Contrato::join('empresas as ee','ee.id','=','contratos.empresa_id')->join('users', 'users.id','=','ee.user_id')->where('users.id', auth()->user()->id)
-            ->join('endereco_empresas','endereco_empresas.id','=','contratos.endereco_empresa_id')
-            ->join('automovels','automovels.id','=','contratos.automovel_id')
-            ->join('agendamento_15_dias','agendamento_15_dias.id','=','contratos.agendamento_15_dias_id')->get();
+ 
 
-             $id = $Agendamento_15_dias->id;
+        $contrato = Agendamento_15_dias::join('empresas as e','e.id','=','agendamento_15_dias.empresa_id')
+        ->join('users as u', 'u.id','=','e.user_id')->where('u.id', auth()->user()->id )
+        ->join('endereco_empresas as ee','ee.id','=','agendamento_15_dias.empresa_id')
+        ->join('automovels as a','a.id','=','agendamento_15_dias.automovel_id')
+        ->where('agendamento_15_dias.id',$Agendamento_15_dias->id)
+        ->select('e.id as empresa_id','u.id as user_id','ee.id as endereco_empresa_id','a.id as automovel_id', 
+            'e.*','u.*','ee.*','a.*', 'agendamento_15_dias.*')->first();              
+         $id = $Agendamento_15_dias->id;
 
-        return view('pdf_15_dias.pdf', compact('id','contrato'))->with('success',"criador com successo.");
+
+        return view('pdf_15_dias.pdf', ['id' => $id,'contrato' => $contrato])->with('success',"criador com successo.");
 
      }
     public function show()

@@ -109,6 +109,7 @@
       <div class="app-title">
         <div>
           <x-app-layout>
+            @include('alert.alert')
             <table class="table table-sm">
 
                 @foreach($empresa as $emp)
@@ -152,12 +153,15 @@
                     </td>
 
                     <td>
-                    <form action="{{route('alugar_carro', ['id' => $emp->id])}}" method="post">
+                        
+                    <form action="{{route('alugar_carro', $emp->id)}}" method="post">
+           
+
                       @csrf
                       <input type="submit" class="btn btn-primary" name="formulario" value="Alugar carro">
                     </form>
                     </td>
-                  @endforeach  
+                @endforeach  
                 </thead>
             </table>
 
