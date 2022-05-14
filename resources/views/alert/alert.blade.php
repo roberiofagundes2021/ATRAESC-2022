@@ -1,6 +1,6 @@
 @foreach (['danger', 'warning', 'success', 'info'] as $msg)
     @if (Session::has('alert-' . $msg))
-        <div class="alert alert-{{ $msg }} alert-dismissible fade show" role="alert">
+        <div class="alert alert-warning{{ $msg }} alert-dismissible fade show" role="alert">
             <strong>
                 {!! Session::get('alert-' . $msg) !!}
             </strong>
@@ -10,3 +10,4 @@
         </div>
     @endif
 @endforeach
+

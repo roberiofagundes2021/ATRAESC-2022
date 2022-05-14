@@ -29,6 +29,8 @@ class PdfController extends Controller
             ->join('endereco_empresas','endereco_empresas.id','=','agendamento_3_dias.empresa_id')
             ->join('automovels','automovels.id','=','agendamento_3_dias.automovel_id')->get();
 
+         
+
 
             return view('pdf.pdf', compact('contrato'))->with('success',' criador com successo.');
 

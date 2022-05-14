@@ -88,11 +88,11 @@ class Agendamento3DiasController extends Controller
             $agendamento_3_dias->automovel_id=$request->automovel_id;
 
             $feriado=Feriado::get();
-            $quinze_dias=Agendamento_15_dias::get();
             $automovel=Automovel::get();
-         
-             $agendamento_3_dias1= Agendamento_3_dias::join('automovels as a','a.id','=','agendamento_3_dias.automovel_id')
-                                    ->where('a.id',$request->automovel_id)->get();
+            $quinze_dias=Agendamento_15_dias::join('automovels as a','a.id','=','agendamento_15_dias.automovel_id')->where('a.id',$request->automovel_id)->get();
+           
+         //validando com tabela 3 dias 
+             $agendamento_3_dias1= Agendamento_3_dias::join('automovels as a','a.id','=','agendamento_3_dias.automovel_id')->where('a.id',$request->automovel_id)->get();
             
             $qtd_r = 0;
              foreach($agendamento_3_dias1 as $agend_3_dias){
@@ -123,29 +123,95 @@ class Agendamento3DiasController extends Controller
                   }
              } 
             
-             if ($qtd_r > 0) {
-                 
-                 return redirect()->route('Empresa')->with('alert-danger','carro ja agendado');
-             }
+            
            
-             
+             // validando com a tabela feriado 
             foreach($feriado as $feriad) 
             {
-                if(($feriad->data == $request->dia1) or ($feriad->data == $request->dia2) or ($feriad->data == $request->dia3) )
+                if(($feriad->dia1 == $request->dia1) or ($feriad->data == $request->dia2) or ($feriad->data == $request->dia3) )
                    
                   return "você escolheu uma data que e um dia de feriado por favor retorne e tente outra data";
             }
+           
 
-            foreach($quinze_dias as $quinze_dia) 
+            //validando com 15 dias 
+
+            foreach($quinze_dias as $quinze_d) 
             {
-                if(($quinze_dia->data == $request->dia1))
-                     return "ja temos agendamento nessa data por favor retorne e tente outra data";
 
-             }      
-                 
+            if(($request->dia1 ==$quinze_d->dia1 ) or 
+                ($request->dia1==$quinze_d->dia2  ) or 
+                ($request->dia1==$quinze_d->dia3) or 
+                ($request->dia1==$quinze_d->dia4) or 
+                ($request->dia1==$quinze_d->dia5) or 
+                ($request->dia1==$quinze_d->dia6) or 
+                ($request->dia1==$quinze_d->dia6) or 
+                ($request->dia1==$quinze_d->dia7) or 
+                ($request->dia1==$quinze_d->dia8) or 
+                ($request->dia1==$quinze_d->dia9) or 
+                ($request->dia1==$quinze_d->dia10) or 
+                ($request->dia1==$quinze_d->dia11) or 
+                ($request->dia1==$quinze_d->dia12) or 
+                ($request->dia1==$quinze_d->dia13) or 
+                ($request->dia1==$quinze_d->dia14) or 
+                ($request->dia1==$quinze_d->dia15)) {
+
+
+                    $qtd_r++;
+
+                }                
+           
+
+            if(($request->dia2 ==$quinze_d->dia1 ) or 
+                ($request->dia2==$quinze_d->dia2  ) or 
+                ($request->dia2==$quinze_d->dia3) or 
+                ($request->dia2==$quinze_d->dia4) or 
+                ($request->dia2==$quinze_d->dia5) or 
+                ($request->dia2==$quinze_d->dia6) or 
+                ($request->dia2==$quinze_d->dia6) or 
+                ($request->dia2==$quinze_d->dia7) or 
+                ($request->dia2==$quinze_d->dia8) or 
+                ($request->dia2==$quinze_d->dia9) or 
+                ($request->dia2==$quinze_d->dia10) or 
+                ($request->dia2==$quinze_d->dia11) or 
+                ($request->dia2==$quinze_d->dia12) or 
+                ($request->dia2==$quinze_d->dia13) or 
+                ($request->dia2==$quinze_d->dia14) or 
+                ($request->dia2==$quinze_d->dia15)) {
+
+                            $qtd_r++;
+
+                }               
+            
         
+             if(($request->dia3 ==$quinze_d->dia1) or 
+                ($request->dia3==$quinze_d->dia2) or 
+                ($request->dia3==$quinze_d->dia3) or 
+                ($request->dia3==$quinze_d->dia4) or 
+                ($request->dia3==$quinze_d->dia5) or 
+                ($request->dia3==$quinze_d->dia6) or 
+                ($request->dia3==$quinze_d->dia6) or 
+                ($request->dia3==$quinze_d->dia7) or 
+                ($request->dia3==$quinze_d->dia8) or 
+                ($request->dia3==$quinze_d->dia9) or 
+                ($request->dia3==$quinze_d->dia10) or 
+                ($request->dia3==$quinze_d->dia11) or 
+                ($request->dia3==$quinze_d->dia12) or 
+                ($request->dia3==$quinze_d->dia13) or 
+                ($request->dia3==$quinze_d->dia14) or 
+                ($request->dia3==$quinze_d->dia15)) {
 
+                            $qtd_r++;
 
+                }                
+            }
+
+             if ($qtd_r > 0) {
+                 
+                 return redirect()->route('Empresa')->with('alert-danger','as datas que você escolheu ja esta agendada no sistema para esse carro retorne e tente novamente com outro carro');
+             }  
+
+               
             $agendamento_3_dias->save();
 
              $contrato = Agendamento_3_dias::join('empresas as e','e.id','=','agendamento_3_dias.empresa_id')
@@ -159,20 +225,8 @@ class Agendamento3DiasController extends Controller
 
          $id = $agendamento_3_dias->id;
 
-            
-    
            
                 return view('pdf.pdf', compact('id','contrato'))->with('success',' criador com successo.');
-
-            
-
-       
-
-        
-
-         
-
-
 
     }
 

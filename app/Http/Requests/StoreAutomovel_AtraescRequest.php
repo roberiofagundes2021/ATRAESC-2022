@@ -22,7 +22,7 @@ class StoreAutomovel_AtraescRequest extends FormRequest
             //
             'marca'=>'required',
             'modelo'=>'required',
-            'placa'=>'required',
+            'placa'=>'required|formato_placa_de_veiculo',
             'ano'=>'required',
             'cor'=>'required',
      

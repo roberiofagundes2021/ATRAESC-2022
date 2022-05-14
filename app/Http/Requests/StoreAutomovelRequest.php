@@ -23,7 +23,7 @@ class StoreAutomovelRequest extends FormRequest
             'nome'=>'required',
             'marca'=>'required',
             'modelo'=>'required',
-            'placa'=>'required',
+            'placa'=>'required|formato_placa_de_veiculo',
         
      
         ];

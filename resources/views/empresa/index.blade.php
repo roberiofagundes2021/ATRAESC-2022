@@ -137,13 +137,7 @@
 
 
 
-                  <td>
-                    <form action="{{route('Empresa.delete', ['id' => $emp->id])}}" method="post">
-                      @csrf
-                      @method('DELETE')   
-                      <input type="submit" class="btn btn-primary" value="deletar">
-                    </form> 
-                  </td>
+                 
                       
                   <td>
                     <form action="{{route('empresa.edit', ['id' => $emp->id])}}" method="post">

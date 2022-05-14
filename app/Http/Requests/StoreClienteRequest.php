@@ -24,7 +24,7 @@ class StoreClienteRequest extends FormRequest
             'nome'=>'required',
             'idade'=>'required',
             'sexo'=>'required',
-            'cpf'=>'required', 
+            'cpf'=>'required|cpf', 
             'renach'=>'required',
             'rg'=>'required',
      

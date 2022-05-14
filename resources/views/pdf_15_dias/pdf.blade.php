@@ -17,11 +17,7 @@
 
       </style>   
  
-       @if(session('mensagem'))
-                  <div class="alert alert-success">
-                      <p>{{session('mensagem')}}</p>
-                  </div>
-              @endif
+      @include('alert.sucesso_agendamento');
 
   
                 <p class="texto" style="text-align:justify;">

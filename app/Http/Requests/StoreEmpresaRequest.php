@@ -21,9 +21,9 @@ class StoreEmpresaRequest extends FormRequest
         return [
             //
             'razao_social'=>'required',
-            'cpnj'=>'required',
+            'cpnj'=>'required|cnpj',
             'solicitante'=>'required',
-            'telefone'=>'required',
+            'telefone'=>'required|telefone_com_ddd',
             'email'=>'required',
      
         ];

@@ -156,29 +156,44 @@
 
                            
 
-                             
+                            
                            
 
                              <label for="carro">carro</label>
                             {{-- pega a variavel passada pelo metodo create do controller --}}
                             
                               <select name="automovel_id" class="form-control">
+                             @if(isset($automovel)) 
                                 @foreach($automovel as $automovel)
-                                <option value="{{old('automovel_id', $automovel->id)}}"> 
-                                  {{$automovel->modelo}} 
+                                <option value="{{ $automovel->id ?? old(automovel_id) }}"> 
+                                  {{ $automovel->modelo }} 
                                 </option>
                                 @endforeach
+                            @endif
                               </select>
                            
 
 
                              <label>endereco empresas</label>
-                             <input type="text" name="endereco_empresas_id" value="{{ $enderecoempresa->id }}"><br><br>
+                             <input type="text" name="endereco_empresas_id" value=" @if(isset($enderecoempresa)) 
+                             {{  $enderecoempresa->id  }}
+                              @endif"><br><br>
                              
                               <label>empresas</label>
-                               <input type="text" name="empresa_id" class="form-control" value="{{ $empresa->id }}">
+                               <input type="text" name="empresa_id" class="form-control" value="
+                               @if(isset($empresa))
+                               {{ $empresa->id }}
+                               @endif
+                               ">
 
-                             <input type="text" name="qtd_dias_id" value="{{$id}}">
+                             <input type="text" name="qtd_dias_id" value="
+
+                             @if(isset($id))
+                             {{$id}}
+                             @endif
+                             ">
+
+
                             <button type="submit" class="btn btn-primary">Adicionar</button>
 
                             
