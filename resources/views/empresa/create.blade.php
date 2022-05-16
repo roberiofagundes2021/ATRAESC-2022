@@ -85,10 +85,11 @@
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
       
-     <ul class="app-menu">
-          <img src="{{ URL::asset('img/agendar_aula.jpg'); }}"
+    <ul class="app-menu">
+        <li><a class="app-menu__item" href="{{route('dashboard')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">dashboard</span></a></li>
+        <img src="{{ URL::asset('img/agendar_aula.jpg'); }}"
         style="width:350px; height:150px;"><br></a>
-        <li><a class="app-menu__item" href="{{route('Cliente.create')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">agendar aula</span></a></li>
+        <li><a class="app-menu__item" href="{{route('Agendamento3Dias.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">meu agendamento</span></a></li>
          <img src="{{ URL::asset('img/clientes.jpg'); }}"
         style="width:350px; height:150px;"><br></a>
         <li><a class="app-menu__item" href="{{route('Cliente.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Cliente</span></a></li>

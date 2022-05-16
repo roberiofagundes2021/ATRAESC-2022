@@ -23,7 +23,7 @@ class StoreEmpresaRequest extends FormRequest
             'razao_social'=>'required',
             'cpnj'=>'required|cnpj',
             'solicitante'=>'required',
-            'telefone'=>'required|telefone_com_ddd',
+            'telefone'=>'required',
             'email'=>'required',
      
         ];

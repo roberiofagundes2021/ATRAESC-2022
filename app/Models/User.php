@@ -10,6 +10,7 @@ use App\Notifications\RedefinirSenhaNotification;
 use Laravel\Sanctum\HasApiTokens;
 
 
+
 class User extends Authenticatable
 {
   
@@ -45,7 +46,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-     public function sendPasswordResetNotification($token) {
-        $this->notify(new RedefinirSenhaNotification($token, $this->email, $this->name));
-    }
 }

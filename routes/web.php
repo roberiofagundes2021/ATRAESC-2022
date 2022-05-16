@@ -60,14 +60,14 @@ Route::get('/ATRAESC', function () {
 //----------------------------------------------------------------------------------
 Route::get('/index/Agendamento3Dias',[Agendamento3DiasController::class,'index'])->middleware(['auth'])->name('Agendamento3Dias.index');
 
-Route::get('/create/Agendamento3Dias',[Agendamento3DiasController::class,'create'])->middleware(['auth'])->name('Agendamento3Dias.create');
+Route::get('/create/Agendamento3Dias',[Agendamento3DiasController::class,'create'])->middleware(['auth'])->name('Agendamento3Dias.create1');
 
 Route::post('/create/Agendamento3Dias',[Agendamento3DiasController::class,'create'])->middleware(['auth'])->name('Agendamento3Dias.create');
 
 
 Route::post('/store/Agendamento3Dias',[Agendamento3DiasController::class,'store'])->middleware(['auth'])->name('Agendamento3Dias.store');
 
-Route::get('/store/Agendamento3Dias',[Agendamento3DiasController::class,'store'])->middleware(['auth'])->name('Agendamento3Dias.store');
+Route::get('/store/Agendamento3Dias',[Agendamento3DiasController::class,'store'])->middleware(['auth'])->name('Agendamento3Dias.store1');
 
 
 
@@ -77,35 +77,43 @@ Route::put('/Agendamento3Dias/update/{id}',[Agendamento3DiasController::class,'u
 
 Route::delete('/Agendamento3Dias/{id}',[Agendamento3DiasController::class, 'destroy'])->middleware(['auth'])->name('Agendamento3Dias.delete');
 
+Route::post('/Agendamento3Dias/edit/{id}',[Agendamento3DiasController::class,'edit'])->middleware(['auth'])->name('Agendamento3Dias.edit');
+
+Route::get('/Agendamento3Dias/edit/{id}',[Agendamento3DiasController::class,'edit'])->middleware(['auth'])->name('Agendamento3Dias.edit1');
+
 
 //----------------------------------------------------------------------------------
 
 Route::get('/index/Agendamento15Dias',[Agendamento15DiasController::class,'index'])->middleware(['auth'])->name('Agendamento15Dias.index');
 
-Route::get('/create/Agendamento15Dias',[Agendamento15DiasController::class,'create'])->middleware(['auth'])->name('Agendamento15Dias.create');
+Route::get('/create/Agendamento15Dias',[Agendamento15DiasController::class,'create'])->middleware(['auth'])->name('Agendamento15Dias.create1');
 
 Route::post('/create/Agendamento15Dias',[Agendamento15DiasController::class,'create'])->middleware(['auth'])->name('Agendamento15Dias.create');
 
 Route::post('/store/Agendamento15Dias',[Agendamento15DiasController::class,'store'])->middleware(['auth'])->name('Agendamento15Dias.store');
 
-Route::get('/store/Agendamento15Dias',[Agendamento15DiasController::class,'store'])->middleware(['auth'])->name('Agendamento15Dias.store');
+Route::get('/store/Agendamento15Dias',[Agendamento15DiasController::class,'store'])->middleware(['auth'])->name('Agendamento15Dias.store1');
 
 Route::get('/Agendamento15Dias/show/{id}',[Agendamento15DiasController::class,'show'])->middleware(['auth'])->name('Agendamento15Dias.show');
 
 Route::put('/Agendamento15Dias/update/{id}',[Agendamento15DiasController::class,'update'])->middleware(['auth'])->name('Agendamento15Dias.update');
 
 Route::delete('/Agendamento15Dias/{id}',[Agendamento15DiasController::class, 'destroy'])->middleware(['auth'])->name('Agendamento15Dias.delete');
+
+Route::post('/Agendamento15Dias/edit/{id}',[Agendamento15DiasController::class,'edit'])->middleware(['auth'])->name('Agendamento15Dias.edit');
+
+Route::get('/Agendamento15Dias/edit/{id}',[Agendamento15DiasController::class,'edit'])->middleware(['auth'])->name('Agendamento15Dias.edit1');
 //----------------------------------------------------------------------------------
 
 Route::get('/index/AgendamentoComHabilitacao',[AgendamentoComHabilitacaoController::class,'index'])->middleware(['auth'])->name('AgendamentoComHabilitacao.index');
 
-Route::get('/create/AgendamentoComHabilitacao',[AgendamentoComHabilitacaoController::class,'create'])->middleware(['auth'])->name('AgendamentoComHabilitacaoController.create');
+Route::get('/create/AgendamentoComHabilitacao',[AgendamentoComHabilitacaoController::class,'create'])->middleware(['auth'])->name('AgendamentoComHabilitacaoController.create1');
 
 Route::post('/create/AgendamentoComHabilitacao',[AgendamentoComHabilitacaoController::class,'create'])->middleware(['auth'])->name('AgendamentoComHabilitacao.create');
 
 Route::post('/store/AgendamentoComHabilitacao',[AgendamentoComHabilitacaoController::class,'store'])->middleware(['auth'])->name('AgendamentoComHabilitacao.store');
 
-Route::get('/store/AgendamentoComHabilitacao',[AgendamentoComHabilitacaoController::class,'store'])->middleware(['auth'])->name('AgendamentoComHabilitacao.store');
+Route::get('/store/AgendamentoComHabilitacao',[AgendamentoComHabilitacaoController::class,'store'])->middleware(['auth'])->name('AgendamentoComHabilitacao.store1');
 
 Route::get('/AgendamentoComHabilitacao/show/{id}',[AgendamentoComHabilitacaoController::class,'show'])->middleware(['auth'])->name('AgendamentoComHabilitacao.show');
 
@@ -117,7 +125,7 @@ Route::delete('/AgendamentoComHabilitacao/{id}',[AgendamentoComHabilitacaoContro
 
 Route::get('/index/Agendamento',[AgendamentoController::class,'index'])->middleware(['auth'])->name('Agendamento.index');
 
-Route::get('/create/Agendamento',[AgendamentoController::class,'create'])->middleware(['auth'])->name('Agendamento.create');
+Route::get('/create/Agendamento',[AgendamentoController::class,'create'])->middleware(['auth'])->name('Agendamento.create1');
 
 Route::post('/create/Agendamento',[AgendamentoController::class,'create'])->middleware(['auth'])->name('Agendamento.create');
 
@@ -134,13 +142,13 @@ Route::delete('/Agendamento/{id}',[AgendamentoController::class, 'destroy'])->mi
 
 Route::get('/index/AgendamentoSemHabilitacao',[AgendamentoSemHabilitacaoController::class,'index'])->middleware(['auth'])->name('AgendamentoSemHabilitacao.index');
 
-Route::get('/create/AgendamentoSemHabilitacao',[AgendamentoSemHabilitacaoController::class,'create'])->middleware(['auth'])->name('AgendamentoSemHabilitacao.create');
+Route::get('/create/AgendamentoSemHabilitacao',[AgendamentoSemHabilitacaoController::class,'create'])->middleware(['auth'])->name('AgendamentoSemHabilitacao.create1');
 
 Route::post('/create/AgendamentoSemHabilitacao',[AgendamentoSemHabilitacaoController::class,'create'])->middleware(['auth'])->name('AgendamentoSemHabilitacao.create');
 
 Route::post('/store/AgendamentoSemHabilitacao',[AgendamentoSemHabilitacaoController::class,'store'])->middleware(['auth'])->name('AgendamentoSemHabilitacao.store');
 
-Route::get('/store/AgendamentoSemHabilitacao',[AgendamentoSemHabilitacaoController::class,'store'])->middleware(['auth'])->name('AgendamentoSemHabilitacao.store');
+Route::get('/store/AgendamentoSemHabilitacao',[AgendamentoSemHabilitacaoController::class,'store'])->middleware(['auth'])->name('AgendamentoSemHabilitacao.store1');
 
 Route::get('/AgendamentoSemHabilitacao/show/{id}',[AgendamentoSemHabilitacaoController::class,'show'])->middleware(['auth'])->name('AgendamentoSemHabilitacao.show');
 
@@ -154,24 +162,24 @@ Route::delete('/AgendamentoSemHabilitacao/{id}',[AgendamentoSemHabilitacaoContro
 Route::get('/index/Automovel',[AutomovelController::class,'index'])->middleware(['auth'])->name('Automovel.index');
 
 
-Route::get('/create/Automovel',[AutomovelController::class,'create_15dias_atraesc'])->middleware(['auth'])->name('Automovel.create_15dias');
+Route::get('/create/Automovel',[AutomovelController::class,'create_15dias_atraesc'])->middleware(['auth'])->name('Automovel.create_15dias1');
 
 Route::post('/create/Automovel',[AutomovelController::class,'create_15dias_atraesc'])->middleware(['auth'])->name('Automovel.create_15dias');
 
 Route::post('/create/Automovel',[AutomovelController::class,'create_atraesc'])->middleware(['auth'])->name('Automovel.create_atraesc');
 
 
-Route::get('/create/Automovel',[AutomovelController::class,'create'])->middleware(['auth'])->name('Automovel.create');
+Route::get('/create/Automovel',[AutomovelController::class,'create'])->middleware(['auth'])->name('Automovel.create1');
 
 Route::post('/create/Automovel',[AutomovelController::class,'create'])->middleware(['auth'])->name('Automovel.create');
 
-Route::get('/create/Automovel_empresa',[AutomovelController::class,'create_automovel_empresa'])->middleware(['auth'])->name('Automovel_empresa.create');
+Route::get('/create/Automovel_empresa',[AutomovelController::class,'create_automovel_empresa'])->middleware(['auth'])->name('Automovel_empresa.create1');
 
 Route::post('/create/Automovel',[AutomovelController::class,'create_automovel_empresa'])->middleware(['auth'])->name('Automovel_empresa.create');
 
 Route::post('/store/Automovel',[AutomovelController::class,'store'])->middleware(['auth'])->name('Automovel.store');
 
-Route::get('/store/Automovel',[AutomovelController::class,'store'])->middleware(['auth'])->name('Automovel.store');
+Route::get('/store/Automovel',[AutomovelController::class,'store'])->middleware(['auth'])->name('Automovel.store1');
 
 Route::get('/Automovel/show/{id}',[AutomovelController::class,'show'])->middleware(['auth'])->name('Automovel.show');
 
@@ -180,7 +188,7 @@ Route::put('/Automovel/update/{id}',[AutomovelController::class,'update'])->midd
 Route::delete('/Automovel/{id}',[AutomovelController::class, 'destroy'])->middleware(['auth'])->name('Automovel.delete');
 
 Route::post('/Automovel/edit/{id}',[AutomovelController::class,'edit'])->middleware(['auth'])->name('Automovel.edit');
-Route::get('/Automovel/edit/{id}',[AutomovelController::class,'edit'])->middleware(['auth'])->name('Automovel.edit');
+Route::get('/Automovel/edit/{id}',[AutomovelController::class,'edit'])->middleware(['auth'])->name('Automovel.edit1');
 
 //----------------------------------------------------------------------------------
 
@@ -188,14 +196,14 @@ Route::get('/Automovel/edit/{id}',[AutomovelController::class,'edit'])->middlewa
 Route::get('/index/Automovel_atraesc',[Automovel_Atraesc_Controller::class,'index'])->middleware(['auth'])->name('Automovel_atraesc.index');
 
 
-Route::get('/create/Automovel_atraesc',[Automovel_Atraesc_Controller::class,'create'])->middleware(['auth'])->name('Automovel_atraesc.create');
+Route::get('/create/Automovel_atraesc',[Automovel_Atraesc_Controller::class,'create'])->middleware(['auth'])->name('Automovel_atraesc.create1');
 
 Route::post('/create/Automovel_atraesc',[Automovel_Atraesc_Controller::class,'create'])->middleware(['auth'])->name('Automovel_atraesc.create');
 
 
 Route::post('/store/Automovel_atraesc',[Automovel_Atraesc_Controller::class,'store'])->middleware(['auth'])->name('Automovel_atraesc.store');
 
-Route::get('/store/Automovel_atraesc',[Automovel_Atraesc_Controller::class,'store'])->middleware(['auth'])->name('Automovel_atraesc.store');
+Route::get('/store/Automovel_atraesc',[Automovel_Atraesc_Controller::class,'store'])->middleware(['auth'])->name('Automovel_atraesc.store1');
 
 Route::get('/Automovel_atraesc/show/{id}',[Automovel_Atraesc_Controller::class,'show'])->middleware(['auth'])->name('Automovel_atraesc.show');
 
@@ -204,20 +212,20 @@ Route::put('/Automovel_atraesc/update/{id}',[Automovel_Atraesc_Controller::class
 Route::delete('/Automovel_atraesc/{id}',[Automovel_Atraesc_Controller::class, 'destroy'])->middleware(['auth'])->name('Automovel_atraesc.delete');
 
 Route::post('/Automovel_atraesc/edit/{id}',[Automovel_Atraesc_Controller::class,'edit'])->middleware(['auth'])->name('Automovel_atraesc.edit');
-Route::get('/Automovel_atraesc/edit/{id}',[Automovel_Atraesc_Controller::class,'edit'])->middleware(['auth'])->name('Automovel_atraesc.edit');
+Route::get('/Automovel_atraesc/edit/{id}',[Automovel_Atraesc_Controller::class,'edit'])->middleware(['auth'])->name('Automovel_atraesc.edit1');
 
 //---------------------------------------------------------------------------------------
 
 
 Route::get('/index/ATRAESC',[AtraescController::class,'index'])->middleware(['auth'])->name('ATRAESC.index');
 
-Route::get('/create/ATRAESC',[AtraescController::class,'create'])->middleware(['auth'])->name('ATRAESC.create');
+Route::get('/create/ATRAESC',[AtraescController::class,'create'])->middleware(['auth'])->name('ATRAESC.create1');
 
 Route::post('/create/ATRAESC',[AtraescController::class,'create'])->middleware(['auth'])->name('ATRAESC.create');
 
 Route::post('/store/ATRAESC',[AtraescController::class,'store'])->middleware(['auth'])->name('ATRAESC.store');
 
-Route::get('/store/ATRAESC',[AtraescController::class,'store'])->middleware(['auth'])->name('ATRAESC.store');
+Route::get('/store/ATRAESC',[AtraescController::class,'store'])->middleware(['auth'])->name('ATRAESC.store1');
 
 Route::get('/ATRAESC/show/{id}',[AtraescController::class,'show'])->middleware(['auth'])->name('ATRAESC.show');
 
@@ -229,13 +237,13 @@ Route::delete('/ATRAESC/{id}',[AtraescController::class, 'destroy'])->middleware
 
 Route::get('/index/Cliente',[ClienteController::class,'index'])->middleware(['auth'])->name('Cliente.index');
 
-Route::get('/create/Cliente',[ClienteController::class,'create'])->middleware(['auth'])->name('Cliente.create');
+Route::get('/create/Cliente',[ClienteController::class,'create'])->middleware(['auth'])->name('Cliente.create1');
 
 Route::post('/create/Cliente',[ClienteController::class,'create'])->middleware(['auth'])->name('Cliente.create');
 
 Route::post('/store/Cliente',[ClienteController::class,'store'])->middleware(['auth'])->name('Cliente.store');
 
-Route::get('/store/Cliente',[ClienteController::class,'store'])->middleware(['auth'])->name('Cliente.store');
+Route::get('/store/Cliente',[ClienteController::class,'store'])->middleware(['auth'])->name('Cliente.store1');
 
 Route::get('/Cliente/show/{id}',[ClienteController::class,'show'])->middleware(['auth'])->name('Cliente.show');
 
@@ -245,20 +253,20 @@ Route::delete('/Cliente/{id}',[ClienteController::class, 'destroy'])->middleware
 
 Route::post('/Cliente/edit/{id}',[ClienteController::class,'edit'])->middleware(['auth'])->name('Cliente.edit');
 
-Route::get('/Cliente/edit/{id}',[ClienteController::class,'edit'])->middleware(['auth'])->name('Cliente.edit');
+Route::get('/Cliente/edit/{id}',[ClienteController::class,'edit'])->middleware(['auth'])->name('Cliente.edit1');
 
 //----------------------------------------------------------------------------------
 
 
 Route::get('/index/ContatoCliente',[ContatoClienteController::class,'index'])->middleware(['auth'])->name('ContatoCliente');
 
-Route::get('/create/ContatoCliente',[ContatoClienteController::class,'create'])->middleware(['auth'])->name('ContatoCliente.create');
+Route::get('/create/ContatoCliente',[ContatoClienteController::class,'create'])->middleware(['auth'])->name('ContatoCliente.create1');
 
 Route::post('/create/ContatoCliente',[ContatoClienteController::class,'create'])->middleware(['auth'])->name('ContatoCliente.create');
 
 Route::post('/store/ContatoCliente',[ContatoClienteController::class,'store'])->middleware(['auth'])->name('ContatoCliente.store');
 
-Route::get('/store/ContatoCliente',[ContatoClienteController::class,'store'])->middleware(['auth'])->name('ContatoCliente.store');
+Route::get('/store/ContatoCliente',[ContatoClienteController::class,'store'])->middleware(['auth'])->name('ContatoCliente.store1');
 
 Route::get('/ContatoCliente/show/{id}',[ContatoClienteController::class,'show'])->middleware(['auth'])->name('ContatoCliente.show');
 
@@ -270,13 +278,13 @@ Route::delete('/ContatoCliente/{id}',[ContatoClienteController::class, 'destroy'
 
 Route::get('/index/EnderecoCliente',[EnderecoClienteController::class,'index'])->middleware(['auth'])->name('EnderecoCliente');
 
-Route::get('/create/EnderecoCliente',[EnderecoClienteController::class,'create'])->middleware(['auth'])->name('EnderecoCliente.create');
+Route::get('/create/EnderecoCliente',[EnderecoClienteController::class,'create'])->middleware(['auth'])->name('EnderecoCliente.create1');
 
 Route::post('/create/EnderecoCliente',[EnderecoClienteController::class,'create'])->middleware(['auth'])->name('EnderecoCliente.create');
 
 Route::post('/store/EnderecoCliente',[EnderecoClienteController::class,'store'])->middleware(['auth'])->name('EnderecoCliente.store');
 
-Route::get('/store/EnderecoCliente',[EnderecoClienteController::class,'store'])->middleware(['auth'])->name('EnderecoCliente.store');
+Route::get('/store/EnderecoCliente',[EnderecoClienteController::class,'store'])->middleware(['auth'])->name('EnderecoCliente.store1');
 
 Route::get('/EnderecoCliente/show/{id}',[EnderecoClienteController::class,'show'])->middleware(['auth'])->name('EnderecoCliente.show');
 
@@ -290,9 +298,9 @@ Route::delete('/EnderecoCliente/{id}',[EnderecoClienteController::class, 'destro
 Route::get('/index/Empresa',[EmpresaController::class,'index'])->middleware(['auth'])->name('Empresa');
 
 Route::post('/index/alugar_carro/{idemp}',[EmpresaController::class,'alugar_carro'])->middleware(['auth'])->name('alugar_carro');
-Route::get('/index/alugar_carro/{idemp}',[EmpresaController::class,'alugar_carro'])->middleware(['auth'])->name('alugar_carro');
+Route::get('/index/alugar_carro/{idemp}',[EmpresaController::class,'alugar_carro'])->middleware(['auth'])->name('alugar_carro1');
 
-Route::get('/create/Empresa',[EmpresaController::class,'create'])->middleware(['auth'])->name('Empresa.create');
+Route::get('/create/Empresa',[EmpresaController::class,'create'])->middleware(['auth'])->name('Empresa.create1');
 
 
 
@@ -300,7 +308,7 @@ Route::post('/create/Empresa',[EmpresaController::class,'create'])->middleware([
 
 Route::post('/store/Empresa',[EmpresaController::class,'store'])->middleware(['auth'])->name('Empresa.store');
 
-Route::get('/store/Empresa',[EmpresaController::class,'store'])->middleware(['auth'])->name('Empresa.store');
+Route::get('/store/Empresa',[EmpresaController::class,'store'])->middleware(['auth'])->name('Empresa.store1');
 
 Route::get('/Empresa/show/{id}',[EmpresaController::class,'show'])->middleware(['auth'])->name('Empresa.show');
 
@@ -309,7 +317,7 @@ Route::put('/Empresa/update/{id}',[EmpresaController::class,'update'])->middlewa
 Route::delete('/Empresa/{id}',[EmpresaController::class, 'destroy'])->middleware(['auth'])->name('Empresa.delete');
 
 Route::post('/empresa/edit/{id}',[EmpresaController::class,'edit'])->middleware(['auth'])->name('empresa.edit');
-Route::get('/empresa/edit/{id}',[EmpresaController::class,'edit'])->middleware(['auth'])->name('empresa.edit');
+Route::get('/empresa/edit/{id}',[EmpresaController::class,'edit'])->middleware(['auth'])->name('empresa.edit1');
 
 //----------------------------------------------------------------------------------
 Route::get('/index/Empresa_atraesc',[EmpresaAtraescController::class,'index'])->middleware(['auth'])->name('EmpresaAtraesc');
@@ -317,13 +325,13 @@ Route::get('/index/Empresa_atraesc',[EmpresaAtraescController::class,'index'])->
 
 Route::get('/index/EnderecoEmpresa',[EnderecoEmpresaController::class,'index'])->middleware(['auth'])->name('EnderecoEmpresa');
 
-Route::get('/create/EnderecoEmpresa',[EnderecoEmpresaController::class,'create'])->middleware(['auth'])->name('EnderecoEmpresa.create');
+Route::get('/create/EnderecoEmpresa',[EnderecoEmpresaController::class,'create'])->middleware(['auth'])->name('EnderecoEmpresa.create1');
 
 Route::post('/create/EnderecoEmpresa',[EnderecoEmpresaController::class,'create'])->middleware(['auth'])->name('EnderecoEmpresa.create');
 
 Route::post('/store/EnderecoEmpresa',[EnderecoEmpresaController::class,'store'])->middleware(['auth'])->name('EnderecoEmpresa.store');
 
-Route::get('/store/EnderecoEmpresa',[EnderecoEmpresaController::class,'store'])->middleware(['auth'])->name('EnderecoEmpresa.store');
+Route::get('/store/EnderecoEmpresa',[EnderecoEmpresaController::class,'store'])->middleware(['auth'])->name('EnderecoEmpresa.store1');
 
 Route::get('/EnderecoEmpresa/show/{id}',[EnderecoEmpresaController::class,'show'])->middleware(['auth'])->name('EnderecoEmpresa.show');
 
@@ -336,13 +344,13 @@ Route::delete('/EnderecoEmpresa/{id}',[EnderecoEmpresaController::class, 'destro
 
 Route::get('/index/Instrutor',[InstrutorController::class,'index'])->middleware(['auth'])->name('Instrutor.index');
 
-Route::get('/create/Instrutor',[InstrutorController::class,'create'])->middleware(['auth'])->name('Instrutor.create');
+Route::get('/create/Instrutor',[InstrutorController::class,'create'])->middleware(['auth'])->name('Instrutor.create1');
 
 Route::post('/create/Instrutor',[InstrutorController::class,'create'])->middleware(['auth'])->name('Instrutor.create');
 
 Route::post('/store/Instrutor',[InstrutorController::class,'store'])->middleware(['auth'])->name('Instrutor.store');
 
-Route::get('/store/Instrutor',[InstrutorController::class,'store'])->middleware(['auth'])->name('Instrutor.store');
+Route::get('/store/Instrutor',[InstrutorController::class,'store'])->middleware(['auth'])->name('Instrutor.store1');
 
 Route::get('/Instrutor/show/{id}',[InstrutorController::class,'show'])->middleware(['auth'])->name('Instrutor.show');
 
@@ -352,18 +360,18 @@ Route::delete('/Instrutor/{id}',[InstrutorController::class, 'destroy'])->middle
 
 Route::post('/Instrutor/edit/{id}',[InstrutorController::class,'edit'])->middleware(['auth'])->name('Instrutor.edit');
 
-Route::get('/Instrutor/edit/{id}',[InstrutorController::class,'edit'])->middleware(['auth'])->name('Instrutor.edit');
+Route::get('/Instrutor/edit/{id}',[InstrutorController::class,'edit'])->middleware(['auth'])->name('Instrutor.edit1');
 //----------------------------------------------------------------------------------
 
 Route::get('/index/contrato',[ContratoController::class,'index'])->middleware(['auth'])->name('contrato.index');
 
-Route::get('/create/contrato',[ContratoController::class,'create'])->middleware(['auth'])->name('contrato.create');
+Route::get('/create/contrato',[ContratoController::class,'create'])->middleware(['auth'])->name('contrato.create1');
 
 Route::post('/create/contrato',[ContratoController::class,'create'])->middleware(['auth'])->name('contrato.create');
 
 Route::post('/store/contrato',[ContratoController::class,'store'])->middleware(['auth'])->name('contrato.store');
 
-Route::get('/store/contrato',[ContratoController::class,'store'])->middleware(['auth'])->name('contrato1.store');
+Route::get('/store/contrato',[ContratoController::class,'store'])->middleware(['auth'])->name('contrato1.store1');
 
 Route::get('/contrato/show/{id}',[ContratoController::class,'show'])->middleware(['auth'])->name('contrato.show');
 
@@ -375,13 +383,13 @@ Route::delete('/contrato/{id}',[ContratoController::class, 'destroy'])->middlewa
 
 Route::get('/index/feriado',[FeriadoController::class,'index'])->middleware(['auth'])->name('feriado.index');
 
-Route::get('/create/feriado',[FeriadoController::class,'create'])->middleware(['auth'])->name('feriado.create');
+Route::get('/create/feriado',[FeriadoController::class,'create'])->middleware(['auth'])->name('feriado.create1');
 
 Route::post('/create/feriado',[FeriadoController::class,'create'])->middleware(['auth'])->name('feriado.create');
 
 Route::post('/store/feriado',[FeriadoController::class,'store'])->middleware(['auth'])->name('feriado.store');
 
-Route::get('/store/feriado',[FeriadoController::class,'store'])->middleware(['auth'])->name('feriado.store');
+Route::get('/store/feriado',[FeriadoController::class,'store'])->middleware(['auth'])->name('feriado.store1');
 
 Route::get('/feriado/show/{id}',[FeriadoController::class,'show'])->middleware(['auth'])->name('feriado.show');
 
@@ -391,12 +399,12 @@ Route::delete('/feriado/{id}',[FeriadoController::class, 'destroy'])->middleware
 
 Route::post('/feriado/edit/{id}',[FeriadoController::class,'edit'])->middleware(['auth'])->name('feriado.edit');
 
-Route::get('/feriado/edit/{id}',[FeriadoController::class,'edit'])->middleware(['auth'])->name('feriado.edit');
+Route::get('/feriado/edit/{id}',[FeriadoController::class,'edit'])->middleware(['auth'])->name('feriado.edit1');
 
 //---------------------------------------------------------------------------
 Route::get('/index/qtd_dias',[QtdDiasController::class,'index'])->middleware(['auth'])->name('qtd_dias.index');
 
-Route::get('/create/qtd_dias/{id}',[QtdDiasController::class,'create'])->middleware(['auth'])->name('qtd_dias.create');
+Route::get('/create/qtd_dias/{id}',[QtdDiasController::class,'create'])->middleware(['auth'])->name('qtd_dias.create1');
 
 Route::post('/create/qtd_dias/{id}',[QtdDiasController::class,'create'])->middleware(['auth'])->name('qtd_dias.create');
 
@@ -410,7 +418,7 @@ Route::delete('/qtd_dias/{id}',[QtdDiasController::class, 'destroy'])->middlewar
 
 Route::post('/qtd_dias/edit/{id}',[QtdDiasController::class,'edit'])->middleware(['auth'])->name('qtd_dias.edit');
 
-Route::get('/qtd_dias/edit/{id}',[QtdDiasController::class,'edit'])->middleware(['auth'])->name('qtd_dias.edit');
+Route::get('/qtd_dias/edit/{id}',[QtdDiasController::class,'edit'])->middleware(['auth'])->name('qtd_dias.edit1');
 
 
 

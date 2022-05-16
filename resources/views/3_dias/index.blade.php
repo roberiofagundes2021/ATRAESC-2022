@@ -116,30 +116,41 @@
             <table class="table table-sm">
 
                 @foreach($agendamento_3_dias as $agen3dias)
-                <thead>
-                  <tr>
-                  <th>empresa</th>                    
-                  <th> dia 1</th><br>
-                  <th> dia 2</th>
-                  <th> dia 3</th>
-                
-                   <th>data e hora que foi agendado</th>
+                  <thead>
+                    <tr>
+                                  
+                    <th> dia 1</th><br>
+                    <th> dia 2</th>
+                    <th> dia 3</th>
+                     <th>data e hora que foi agendado</th>
+                     <th>automovel</th>
+                     <th></th>
+                     <th></th>
+                     <th></th>
+                    </tr>
+                  </thead>
+                  <thead>
+               
+                    <td>{{$agen3dias->dia1}}</td>
+                    <td>{{$agen3dias->dia2}}</td>
+                    <td>{{$agen3dias->dia3}}</td>
+                     <td>{{$agen3dias->created_at}}</td>  
+                     <td>{{$agen3dias->modelo}}</td>  
 
-                   <th></th>
-                   <th></th>
-                   <th></th>
-                  </tr>
-                </thead>
+                      <td>
+                    <form action="{{route('Agendamento3Dias.edit', ['id' => $agen3dias->id])}}" method="post">
+                      @csrf
+                      <input type="submit" class="btn btn-primary" name="formulario" value="alterar data de agendamento">
+                    </form>
+                    </td>
 
-                <thead>
-                  <td>{{$agen3dias->razao_social}}</td>
-                  <td>{{$agen3dias->dia1}}</td>
-                  <td>{{$agen3dias->dia2}}</td>
-                  <td>{{$agen3dias->dia3}}</td>
-                   <td>{{$agen3dias->created_at}}</td>                 
-
-
-                
+                      <td>
+                    <form action="{{route('Agendamento3Dias.delete', ['id' => $agen3dias->id])}}" method="post">
+                      @csrf
+                      @method('DELETE')   
+                      <input type="submit" class="btn btn-primary" value="deletar">
+                    </form> 
+                  </td>              
                   @endforeach  
                 </thead>
             </table>

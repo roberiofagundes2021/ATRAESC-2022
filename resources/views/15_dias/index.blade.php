@@ -115,14 +115,25 @@
           <x-app-layout>
             <table class="table table-sm">
 
-                @foreach($agendamento_15_dias as $agen3dias)
+                @foreach($agendamento_15_dias as $agen15dias)
                 <thead>
                   <tr>
                   <th>empresa</th>                    
                   <th> dia 1</th><br>
                   <th> dia 2</th>
                   <th> dia 3</th>
-                
+                  <th> dia 4</th>
+                  <th> dia 5</th>
+                  <th> dia 6</th>
+                  <th> dia 7</th>
+                  <th> dia 8</th>
+                  <th> dia 9</th>
+                  <th> dia 10</th>
+                  <th> dia 11</th>
+                  <th> dia 12</th>
+                  <th> dia 13</th>
+                  <th> dia 14</th>
+                  <th> dia 15</th>
                    <th>data e hora que foi agendado</th>
 
                    <th></th>
@@ -132,13 +143,37 @@
                 </thead>
 
                 <thead>
-                  <td>{{$agen3dias->razao_social}}</td>
-                  <td>{{$agen3dias->dia1}}</td>
-                  <td>{{$agen3dias->dia2}}</td>
-                  <td>{{$agen3dias->dia3}}</td>
-                   <td>{{$agen3dias->created_at}}</td>                 
+                  <td>{{$agen15dias->razao_social}}</td>
+                  <td>{{date( 'd/m/Y' , strtotime($agen15dias->dia1)) }}</td>
+                  <td>{{date( 'd/m/Y' , strtotime($agen15dias->dia2)) }}</td>
+                  <td>{{date( 'd/m/Y' , strtotime($agen15dias->dia3)) }}</td>
+                  <td>{{date( 'd/m/Y' , strtotime($agen15dias->dia4)) }}</td>
+                  <td>{{date( 'd/m/Y' , strtotime($agen15dias->dia5)) }}</td>
+                  <td>{{date( 'd/m/Y' , strtotime($agen15dias->dia6)) }}</td>
+                  <td>{{date( 'd/m/Y' , strtotime($agen15dias->dia7)) }}</td>
+                  <td>{{date( 'd/m/Y' , strtotime($agen15dias->dia8)) }}</td>
+                  <td>{{date( 'd/m/Y' , strtotime($agen15dias->dia9)) }}</td>
+                  <td>{{date( 'd/m/Y' , strtotime($agen15dias->dia10)) }}</td>
+                  <td>{{date( 'd/m/Y' , strtotime($agen15dias->dia11)) }}</td>
+                  <td>{{date( 'd/m/Y' , strtotime($agen15dias->dia12)) }}</td>
+                  <td>{{date( 'd/m/Y' , strtotime($agen15dias->dia13)) }}</td>
+                  <td>{{date( 'd/m/Y' , strtotime($agen15dias->dia14)) }}</td>
+                  <td>{{date( 'd/m/Y' , strtotime($agen15dias->dia15)) }}</td>
+                  <td>{{$agen15dias->created_at}}</td> 
 
+                    <td>
+                      <form action="{{route('Agendamento15Dias.edit', ['id' => $agen15dias->id])}}" method="post">
+                        @csrf
+                        <input type="submit" class="btn btn-primary" name="formulario" value="alterar data de agendamento">
+                      </form>
+                    </td>
 
+                      <td>
+                    <form action="{{route('Agendamento15Dias.delete', ['id' => $agen15dias->id])}}" method="post">
+                      @csrf
+                      @method('DELETE')   
+                      <input type="submit" class="btn btn-primary" value="deletar">
+                    </form> 
                 
                   @endforeach  
                 </thead>

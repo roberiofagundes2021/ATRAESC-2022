@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreEnderecoEmpresaRequest;
 use App\Models\Automovel;
 
 use App\Http\Requests\StoreQtd_diasRequest;
@@ -46,7 +45,7 @@ class QtdDiasController extends Controller
      * @param  \App\Http\Requests\StoreQtd_diasRequest  $request
      * @return \Illuminate\Http\Response
      */
-   public function store(Request $request)
+   public function store(StoreQtd_diasRequest $request)
     {
     
         $qtd_dias = new Qtd_dias(); 

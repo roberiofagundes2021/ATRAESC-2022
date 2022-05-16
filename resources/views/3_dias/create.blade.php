@@ -135,7 +135,7 @@
 
                     @endif
                     
-                  @include('alert.alert')
+              
 
 
                 <div class="mb-3">

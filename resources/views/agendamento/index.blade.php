@@ -87,21 +87,20 @@
     <aside class="app-sidebar">
       
       <ul class="app-menu">
+        <li><a class="app-menu__item" href="{{route('dashboard')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">dashboard</span></a></li>
         <img src="{{ URL::asset('img/agendar_aula.jpg'); }}"
         style="width:350px; height:150px;"><br></a>
-        <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Home</span></a>
+        <li><a class="app-menu__item" href="{{route('Agendamento3Dias.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">meu agendamento</span></a></li>
+         <img src="{{ URL::asset('img/clientes.jpg'); }}"
+        style="width:350px; height:150px;"><br></a>
+        <li><a class="app-menu__item" href="{{route('Cliente.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Cliente</span></a></li>
+        <li><a class="app-menu__item" href="{{route('Empresa.create')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Alugar carro</span></a>
         </li>
-
-        <li><a class="app-menu__item" href="{{route('Empresa')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Empresa</span></a>
+        <li><a class="app-menu__item" href="{{route('Instrutor.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Instrutor</span></a>
         </li>
-
-        <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Carro</span></a>
         </li>
-
-         <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Cliente</span></a>
-        </li>
-
-         <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Agendamento</span></a>
+        <li><a class="app-menu__item" href="{{route('Empresa')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">empresa
+        </span></a>
         </li>
       </ul>
     </aside>
