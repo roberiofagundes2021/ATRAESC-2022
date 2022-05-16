@@ -387,7 +387,7 @@ class Agendamento15DiasController extends Controller
              // validando com a tabela feriado 
             foreach($feriado as $feriad) 
             {
-                if(($feriad->dia1 == $request->dia1) or 
+                if(($feriad->data == $request->dia1) or 
                     ($feriad->data == $request->dia2) or 
                     ($feriad->data == $request->dia3) or 
                     ($feriad->data == $request->dia4) or 
@@ -404,7 +404,10 @@ class Agendamento15DiasController extends Controller
                     ($feriad->data == $request->dia14) or 
                     ($feriad->data == $request->dia15)){
 
-                    return "você escolheu uma data que e um dia de feriado por favor retorne e tente outra data";
+                      $automovel=Automovel::get();
+                      $empresa = Empresa::where('id',$request->empresa_id)->first();
+                      $enderecoempresa = EnderecoEmpresa::where('empresa_id', $empresa->id)->first();
+                       return view('15_dias.create',compact('automovel','empresa','enderecoempresa'))->withErrors(['msg' => 'veja as datas que você escolheu não trabalhamos no domingo ou feriado! Por favor tente novamente com datas que não seja nem feriado e nem domingos']);
 
                 }
                    
