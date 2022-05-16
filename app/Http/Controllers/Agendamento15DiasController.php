@@ -76,305 +76,305 @@ class Agendamento15DiasController extends Controller
 
 
                  if(($quinze_d->dia1 == $request->dia1) or 
-                    ($quinze_dias->dia2 == $request->dia1) or 
-                    ($quinze_dias->dia3== $request->dia1) or 
-                    ($quinze_dias->dia4 == $request->dia1) or 
-                    ($quinze_dias->dia5== $request->dia1) or 
-                    ($quinze_dias->dia6 == $request->dia1) or 
-                    ($quinze_dias->dia7== $request->dia1) or
-                    ($quinze_dias->dia8 == $request->dia1) or
-                    ($quinze_dias->dia9== $request->dia1) or
-                    ($quinze_dias->dia10 == $request->dia1) or
-                    ($quinze_dias->dia11== $request->dia1) or
-                    ($quinze_dias->dia12 == $request->dia1) or 
-                    ($quinze_dias->dia13== $request->dia1) or 
-                    ($quinze_dias->dia14 == $request->dia1) or
-                    ($quinze_dias->dia15== $request->dia1) or
-                    ($quinze_dias->dia15 == $request->dia1)){
+                    ($quinze_d->dia2 == $request->dia1) or 
+                    ($quinze_d->dia3== $request->dia1) or 
+                    ($quinze_d->dia4 == $request->dia1) or 
+                    ($quinze_d->dia5== $request->dia1) or 
+                    ($quinze_d->dia6 == $request->dia1) or 
+                    ($quinze_d->dia7== $request->dia1) or
+                    ($quinze_d->dia8 == $request->dia1) or
+                    ($quinze_d->dia9== $request->dia1) or
+                    ($quinze_d->dia10 == $request->dia1) or
+                    ($quinze_d->dia11== $request->dia1) or
+                    ($quinze_d->dia12 == $request->dia1) or 
+                    ($quinze_d->dia13== $request->dia1) or 
+                    ($quinze_d->dia14 == $request->dia1) or
+                    ($quinze_d->dia15== $request->dia1) or
+                    ($quinze_d->dia15 == $request->dia1)){
                    
                     $qtd_r++;
                    
                   }
 
                   if(($quinze_d->dia1 == $request->dia2) or 
-                    ($quinze_dias->dia2 == $request->dia2) or 
-                    ($quinze_dias->dia3== $request->dia2) or 
-                    ($quinze_dias->dia4 == $request->dia2) or 
-                    ($quinze_dias->dia5== $request->dia2) or 
-                    ($quinze_dias->dia6 == $request->dia2) or 
-                    ($quinze_dias->dia7== $request->dia2) or
-                    ($quinze_dias->dia8 == $request->dia2) or
-                    ($quinze_dias->dia9== $request->dia2) or
-                    ($quinze_dias->dia10 == $request->dia2) or
-                    ($quinze_dias->dia11== $request->dia2) or
-                    ($quinze_dias->dia12 == $request->dia2) or 
-                    ($quinze_dias->dia13== $request->dia2) or 
-                    ($quinze_dias->dia14 == $request->dia2) or
-                    ($quinze_dias->dia15== $request->dia2) or
-                    ($quinze_dias->dia15 == $request->dia2) ){
+                    ($quinze_d->dia2 == $request->dia2) or 
+                    ($quinze_d->dia3== $request->dia2) or 
+                    ($quinze_d->dia4 == $request->dia2) or 
+                    ($quinze_d->dia5== $request->dia2) or 
+                    ($quinze_d->dia6 == $request->dia2) or 
+                    ($quinze_d->dia7== $request->dia2) or
+                    ($quinze_d->dia8 == $request->dia2) or
+                    ($quinze_d->dia9== $request->dia2) or
+                    ($quinze_d->dia10 == $request->dia2) or
+                    ($quinze_d->dia11== $request->dia2) or
+                    ($quinze_d->dia12 == $request->dia2) or 
+                    ($quinze_d->dia13== $request->dia2) or 
+                    ($quinze_d->dia14 == $request->dia2) or
+                    ($quinze_d->dia15== $request->dia2) or
+                    ($quinze_d->dia15 == $request->dia2) ){
 
                     $qtd_r++;
                     
                   }
 
                   if(($quinze_d->dia1 == $request->dia3) or 
-                    ($quinze_dias->dia2 == $request->dia3) or 
-                    ($quinze_dias->dia3== $request->dia3) or 
-                    ($quinze_dias->dia4 == $request->dia3) or 
-                    ($quinze_dias->dia5== $request->dia3) or 
-                    ($quinze_dias->dia6 == $request->dia3) or 
-                    ($quinze_dias->dia7== $request->dia3) or
-                    ($quinze_dias->dia8 == $request->dia3) or
-                    ($quinze_dias->dia9== $request->dia3) or
-                    ($quinze_dias->dia10 == $request->dia3) or
-                    ($quinze_dias->dia11== $request->dia3) or
-                    ($quinze_dias->dia12 == $request->dia3) or 
-                    ($quinze_dias->dia13== $request->dia3) or 
-                    ($quinze_dias->dia14 == $request->dia3) or
-                    ($quinze_dias->dia15== $request->dia3) or
-                    ($quinze_dias->dia15 == $request->dia3) ){
+                    ($quinze_d->dia2 == $request->dia3) or 
+                    ($quinze_d->dia3== $request->dia3) or 
+                    ($quinze_d->dia4 == $request->dia3) or 
+                    ($quinze_d->dia5== $request->dia3) or 
+                    ($quinze_d->dia6 == $request->dia3) or 
+                    ($quinze_d->dia7== $request->dia3) or
+                    ($quinze_d->dia8 == $request->dia3) or
+                    ($quinze_d->dia9== $request->dia3) or
+                    ($quinze_d->dia10 == $request->dia3) or
+                    ($quinze_d->dia11== $request->dia3) or
+                    ($quinze_d->dia12 == $request->dia3) or 
+                    ($quinze_d->dia13== $request->dia3) or 
+                    ($quinze_d->dia14 == $request->dia3) or
+                    ($quinze_d->dia15== $request->dia3) or
+                    ($quinze_d->dia15 == $request->dia3) ){
 
                     $qtd_r++;
                   }
 
                   if(($quinze_d->dia1 == $request->dia4) or 
-                    ($quinze_dias->dia2 == $request->dia4) or 
-                    ($quinze_dias->dia3== $request->dia4) or 
-                    ($quinze_dias->dia4 == $request->dia4) or 
-                    ($quinze_dias->dia5== $request->dia4) or 
-                    ($quinze_dias->dia6 == $request->dia4) or 
-                    ($quinze_dias->dia7== $request->dia4) or
-                    ($quinze_dias->dia8 == $request->dia4) or
-                    ($quinze_dias->dia9== $request->dia4) or
-                    ($quinze_dias->dia10 == $request->dia4) or
-                    ($quinze_dias->dia11== $request->dia4) or
-                    ($quinze_dias->dia12 == $request->dia4) or 
-                    ($quinze_dias->dia13== $request->dia4) or 
-                    ($quinze_dias->dia14 == $request->dia4) or
-                    ($quinze_dias->dia15== $request->dia4) or
-                    ($quinze_dias->dia15 == $request->dia4) ){
+                    ($quinze_d->dia2 == $request->dia4) or 
+                    ($quinze_d->dia3== $request->dia4) or 
+                    ($quinze_d->dia4 == $request->dia4) or 
+                    ($quinze_d->dia5== $request->dia4) or 
+                    ($quinze_d->dia6 == $request->dia4) or 
+                    ($quinze_d->dia7== $request->dia4) or
+                    ($quinze_d->dia8 == $request->dia4) or
+                    ($quinze_d->dia9== $request->dia4) or
+                    ($quinze_d->dia10 == $request->dia4) or
+                    ($quinze_d->dia11== $request->dia4) or
+                    ($quinze_d->dia12 == $request->dia4) or 
+                    ($quinze_d->dia13== $request->dia4) or 
+                    ($quinze_d->dia14 == $request->dia4) or
+                    ($quinze_d->dia15== $request->dia4) or
+                    ($quinze_d->dia15 == $request->dia4) ){
 
                     $qtd_r++;
                   }
 
 
                   if(($quinze_d->dia1 == $request->dia5) or 
-                    ($quinze_dias->dia2 == $request->dia5) or 
-                    ($quinze_dias->dia3== $request->dia5) or 
-                    ($quinze_dias->dia4 == $request->dia5) or 
-                    ($quinze_dias->dia5== $request->dia5) or 
-                    ($quinze_dias->dia6 == $request->dia5) or 
-                    ($quinze_dias->dia7== $request->dia5) or
-                    ($quinze_dias->dia8 == $request->dia5) or
-                    ($quinze_dias->dia9== $request->dia5) or
-                    ($quinze_dias->dia10 == $request->dia5) or
-                    ($quinze_dias->dia11== $request->dia5) or
-                    ($quinze_dias->dia12 == $request->dia5) or 
-                    ($quinze_dias->dia13== $request->dia5) or 
-                    ($quinze_dias->dia14 == $request->dia5) or
-                    ($quinze_dias->dia15== $request->dia5) or
-                    ($quinze_dias->dia15 == $request->dia5) ){
+                    ($quinze_d->dia2 == $request->dia5) or 
+                    ($quinze_d->dia3== $request->dia5) or 
+                    ($quinze_d->dia4 == $request->dia5) or 
+                    ($quinze_d->dia5== $request->dia5) or 
+                    ($quinze_d->dia6 == $request->dia5) or 
+                    ($quinze_d->dia7== $request->dia5) or
+                    ($quinze_d->dia8 == $request->dia5) or
+                    ($quinze_d->dia9== $request->dia5) or
+                    ($quinze_d->dia10 == $request->dia5) or
+                    ($quinze_d->dia11== $request->dia5) or
+                    ($quinze_d->dia12 == $request->dia5) or 
+                    ($quinze_d->dia13== $request->dia5) or 
+                    ($quinze_d->dia14 == $request->dia5) or
+                    ($quinze_d->dia15== $request->dia5) or
+                    ($quinze_d->dia15 == $request->dia5) ){
 
                     $qtd_r++;
                   }
 
                   if(($quinze_d->dia1 == $request->dia6) or 
-                    ($quinze_dias->dia2 == $request->dia6) or 
-                    ($quinze_dias->dia3== $request->dia6) or 
-                    ($quinze_dias->dia4 == $request->dia6) or 
-                    ($quinze_dias->dia5== $request->dia6) or 
-                    ($quinze_dias->dia6 == $request->dia6) or 
-                    ($quinze_dias->dia7== $request->dia6) or
-                    ($quinze_dias->dia8 == $request->dia6) or
-                    ($quinze_dias->dia9== $request->dia6) or
-                    ($quinze_dias->dia10 == $request->dia6) or
-                    ($quinze_dias->dia11== $request->dia6) or
-                    ($quinze_dias->dia12 == $request->dia6) or 
-                    ($quinze_dias->dia13== $request->dia6) or 
-                    ($quinze_dias->dia14 == $request->dia6) or
-                    ($quinze_dias->dia15== $request->dia6) or
-                    ($quinze_dias->dia15 == $request->dia6) ){
+                    ($quinze_d->dia2 == $request->dia6) or 
+                    ($quinze_d->dia3== $request->dia6) or 
+                    ($quinze_d->dia4 == $request->dia6) or 
+                    ($quinze_d->dia5== $request->dia6) or 
+                    ($quinze_d->dia6 == $request->dia6) or 
+                    ($quinze_d->dia7== $request->dia6) or
+                    ($quinze_d->dia8 == $request->dia6) or
+                    ($quinze_d->dia9== $request->dia6) or
+                    ($quinze_d->dia10 == $request->dia6) or
+                    ($quinze_d->dia11== $request->dia6) or
+                    ($quinze_d->dia12 == $request->dia6) or 
+                    ($quinze_d->dia13== $request->dia6) or 
+                    ($quinze_d->dia14 == $request->dia6) or
+                    ($quinze_d->dia15== $request->dia6) or
+                    ($quinze_d->dia15 == $request->dia6) ){
 
                     $qtd_r++;
                   }
 
                    if(($quinze_d->dia1 == $request->dia7) or 
-                    ($quinze_dias->dia2 == $request->dia7) or 
-                    ($quinze_dias->dia3== $request->dia7) or 
-                    ($quinze_dias->dia4 == $request->dia7) or 
-                    ($quinze_dias->dia5== $request->dia7) or 
-                    ($quinze_dias->dia6 == $request->dia7) or 
-                    ($quinze_dias->dia7== $request->dia7) or
-                    ($quinze_dias->dia8 == $request->dia7) or
-                    ($quinze_dias->dia9== $request->dia7) or
-                    ($quinze_dias->dia10 == $request->dia7) or
-                    ($quinze_dias->dia11== $request->dia7) or
-                    ($quinze_dias->dia12 == $request->dia7) or 
-                    ($quinze_dias->dia13== $request->dia7) or 
-                    ($quinze_dias->dia14 == $request->dia7) or
-                    ($quinze_dias->dia15== $request->dia7) or
-                    ($quinze_dias->dia15 == $request->dia7) ){
+                    ($quinze_d->dia2 == $request->dia7) or 
+                    ($quinze_d->dia3== $request->dia7) or 
+                    ($quinze_d->dia4 == $request->dia7) or 
+                    ($quinze_d->dia5== $request->dia7) or 
+                    ($quinze_d->dia6 == $request->dia7) or 
+                    ($quinze_d->dia7== $request->dia7) or
+                    ($quinze_d->dia8 == $request->dia7) or
+                    ($quinze_d->dia9== $request->dia7) or
+                    ($quinze_d->dia10 == $request->dia7) or
+                    ($quinze_d->dia11== $request->dia7) or
+                    ($quinze_d->dia12 == $request->dia7) or 
+                    ($quinze_d->dia13== $request->dia7) or 
+                    ($quinze_d->dia14 == $request->dia7) or
+                    ($quinze_d->dia15== $request->dia7) or
+                    ($quinze_d->dia15 == $request->dia7) ){
 
                     $qtd_r++;
                   }
 
                   if(($quinze_d->dia1 == $request->dia8) or 
-                    ($quinze_dias->dia2 == $request->dia8) or 
-                    ($quinze_dias->dia3== $request->dia8) or 
-                    ($quinze_dias->dia4 == $request->dia8) or 
-                    ($quinze_dias->dia5== $request->dia8) or 
-                    ($quinze_dias->dia6 == $request->dia8) or 
-                    ($quinze_dias->dia7== $request->dia8) or
-                    ($quinze_dias->dia8 == $request->dia8) or
-                    ($quinze_dias->dia9== $request->dia8) or
-                    ($quinze_dias->dia10 == $request->dia8) or
-                    ($quinze_dias->dia11== $request->dia8) or
-                    ($quinze_dias->dia12 == $request->dia8) or 
-                    ($quinze_dias->dia13== $request->dia8) or 
-                    ($quinze_dias->dia14 == $request->dia8) or
-                    ($quinze_dias->dia15== $request->dia8) or
-                    ($quinze_dias->dia15 == $request->dia8) ){
+                    ($quinze_d->dia2 == $request->dia8) or 
+                    ($quinze_d->dia3== $request->dia8) or 
+                    ($quinze_d->dia4 == $request->dia8) or 
+                    ($quinze_d->dia5== $request->dia8) or 
+                    ($quinze_d->dia6 == $request->dia8) or 
+                    ($quinze_d->dia7== $request->dia8) or
+                    ($quinze_d->dia8 == $request->dia8) or
+                    ($quinze_d->dia9== $request->dia8) or
+                    ($quinze_d->dia10 == $request->dia8) or
+                    ($quinze_d->dia11== $request->dia8) or
+                    ($quinze_d->dia12 == $request->dia8) or 
+                    ($quinze_d->dia13== $request->dia8) or 
+                    ($quinze_d->dia14 == $request->dia8) or
+                    ($quinze_d->dia15== $request->dia8) or
+                    ($quinze_d->dia15 == $request->dia8) ){
 
                     $qtd_r++;
                   }
 
                   if(($quinze_d->dia1 == $request->dia9) or 
-                    ($quinze_dias->dia2 == $request->dia9) or 
-                    ($quinze_dias->dia3== $request->dia9) or 
-                    ($quinze_dias->dia4 == $request->dia9) or 
-                    ($quinze_dias->dia5== $request->dia9) or 
-                    ($quinze_dias->dia6 == $request->dia9) or 
-                    ($quinze_dias->dia7== $request->dia9) or
-                    ($quinze_dias->dia8 == $request->dia9) or
-                    ($quinze_dias->dia9== $request->dia9) or
-                    ($quinze_dias->dia10 == $request->dia9) or
-                    ($quinze_dias->dia11== $request->dia9) or
-                    ($quinze_dias->dia12 == $request->dia9) or 
-                    ($quinze_dias->dia13== $request->dia9) or 
-                    ($quinze_dias->dia14 == $request->dia9) or
-                    ($quinze_dias->dia15== $request->dia9) or
-                    ($quinze_dias->dia15 == $request->dia9) ){
+                    ($quinze_d->dia2 == $request->dia9) or 
+                    ($quinze_d->dia3== $request->dia9) or 
+                    ($quinze_d->dia4 == $request->dia9) or 
+                    ($quinze_d->dia5== $request->dia9) or 
+                    ($quinze_d->dia6 == $request->dia9) or 
+                    ($quinze_d->dia7== $request->dia9) or
+                    ($quinze_d->dia8 == $request->dia9) or
+                    ($quinze_d->dia9== $request->dia9) or
+                    ($quinze_d->dia10 == $request->dia9) or
+                    ($quinze_d->dia11== $request->dia9) or
+                    ($quinze_d->dia12 == $request->dia9) or 
+                    ($quinze_d->dia13== $request->dia9) or 
+                    ($quinze_d->dia14 == $request->dia9) or
+                    ($quinze_d->dia15== $request->dia9) or
+                    ($quinze_d->dia15 == $request->dia9) ){
 
                     $qtd_r++;
                   }
 
                    if(($quinze_d->dia1 == $request->dia10) or 
-                    ($quinze_dias->dia2 == $request->dia10) or 
-                    ($quinze_dias->dia3== $request->dia10) or 
-                    ($quinze_dias->dia4 == $request->dia10) or 
-                    ($quinze_dias->dia5== $request->dia10) or 
-                    ($quinze_dias->dia6 == $request->dia10) or 
-                    ($quinze_dias->dia7== $request->dia10) or
-                    ($quinze_dias->dia8 == $request->dia10) or
-                    ($quinze_dias->dia9== $request->dia10) or
-                    ($quinze_dias->dia10 == $request->dia10) or
-                    ($quinze_dias->dia11== $request->dia10) or
-                    ($quinze_dias->dia12 == $request->dia10) or 
-                    ($quinze_dias->dia13== $request->dia10) or 
-                    ($quinze_dias->dia14 == $request->dia10) or
-                    ($quinze_dias->dia15== $request->dia10) or
-                    ($quinze_dias->dia15 == $request->dia10) ){
+                    ($quinze_d->dia2 == $request->dia10) or 
+                    ($quinze_d->dia3== $request->dia10) or 
+                    ($quinze_d->dia4 == $request->dia10) or 
+                    ($quinze_d->dia5== $request->dia10) or 
+                    ($quinze_d->dia6 == $request->dia10) or 
+                    ($quinze_d->dia7== $request->dia10) or
+                    ($quinze_d->dia8 == $request->dia10) or
+                    ($quinze_d->dia9== $request->dia10) or
+                    ($quinze_d->dia10 == $request->dia10) or
+                    ($quinze_d->dia11== $request->dia10) or
+                    ($quinze_d->dia12 == $request->dia10) or 
+                    ($quinze_d->dia13== $request->dia10) or 
+                    ($quinze_d->dia14 == $request->dia10) or
+                    ($quinze_d->dia15== $request->dia10) or
+                    ($quinze_d->dia15 == $request->dia10) ){
 
                     $qtd_r++;
                   }
 
                    if(($quinze_d->dia1 == $request->dia11) or 
-                    ($quinze_dias->dia2 == $request->dia11) or 
-                    ($quinze_dias->dia3== $request->dia11) or 
-                    ($quinze_dias->dia4 == $request->dia11) or 
-                    ($quinze_dias->dia5== $request->dia11) or 
-                    ($quinze_dias->dia6 == $request->dia11) or 
-                    ($quinze_dias->dia7== $request->dia11) or
-                    ($quinze_dias->dia8 == $request->dia11) or
-                    ($quinze_dias->dia9== $request->dia11) or
-                    ($quinze_dias->dia10 == $request->dia11) or
-                    ($quinze_dias->dia11== $request->dia11) or
-                    ($quinze_dias->dia12 == $request->dia11) or 
-                    ($quinze_dias->dia13== $request->dia11) or 
-                    ($quinze_dias->dia14 == $request->dia11) or
-                    ($quinze_dias->dia15== $request->dia11) or
-                    ($quinze_dias->dia15 == $request->dia11) ){
+                    ($quinze_d->dia2 == $request->dia11) or 
+                    ($quinze_d->dia3== $request->dia11) or 
+                    ($quinze_d->dia4 == $request->dia11) or 
+                    ($quinze_d->dia5== $request->dia11) or 
+                    ($quinze_d->dia6 == $request->dia11) or 
+                    ($quinze_d->dia7== $request->dia11) or
+                    ($quinze_d->dia8 == $request->dia11) or
+                    ($quinze_d->dia9== $request->dia11) or
+                    ($quinze_d->dia10 == $request->dia11) or
+                    ($quinze_d->dia11== $request->dia11) or
+                    ($quinze_d->dia12 == $request->dia11) or 
+                    ($quinze_d->dia13== $request->dia11) or 
+                    ($quinze_d->dia14 == $request->dia11) or
+                    ($quinze_d->dia15== $request->dia11) or
+                    ($quinze_d->dia15 == $request->dia11) ){
 
                     $qtd_r++;
                   }
 
                     if(($quinze_d->dia1 == $request->dia12) or 
-                        ($quinze_dias->dia2 == $request->dia12) or 
-                        ($quinze_dias->dia3== $request->dia12) or 
-                        ($quinze_dias->dia4 == $request->dia12) or 
-                        ($quinze_dias->dia5== $request->dia12) or 
-                        ($quinze_dias->dia6 == $request->dia12) or 
-                        ($quinze_dias->dia7== $request->dia12) or
-                        ($quinze_dias->dia8 == $request->dia12) or
-                        ($quinze_dias->dia9== $request->dia12) or
-                        ($quinze_dias->dia10 == $request->dia12) or
-                        ($quinze_dias->dia11== $request->dia12) or
-                        ($quinze_dias->dia12 == $request->dia12) or 
-                        ($quinze_dias->dia13== $request->dia12) or 
-                        ($quinze_dias->dia14 == $request->dia12) or
-                        ($quinze_dias->dia15== $request->dia12) or
-                        ($quinze_dias->dia15 == $request->dia12) ){
+                        ($quinze_d->dia2 == $request->dia12) or 
+                        ($quinze_d->dia3== $request->dia12) or 
+                        ($quinze_d->dia4 == $request->dia12) or 
+                        ($quinze_d->dia5== $request->dia12) or 
+                        ($quinze_d->dia6 == $request->dia12) or 
+                        ($quinze_d->dia7== $request->dia12) or
+                        ($quinze_d->dia8 == $request->dia12) or
+                        ($quinze_d->dia9== $request->dia12) or
+                        ($quinze_d->dia10 == $request->dia12) or
+                        ($quinze_d->dia11== $request->dia12) or
+                        ($quinze_d->dia12 == $request->dia12) or 
+                        ($quinze_d->dia13== $request->dia12) or 
+                        ($quinze_d->dia14 == $request->dia12) or
+                        ($quinze_d->dia15== $request->dia12) or
+                        ($quinze_d->dia15 == $request->dia12) ){
 
                     $qtd_r++;
                   }
 
                    if(($quinze_d->dia1 == $request->dia13) or 
-                        ($quinze_dias->dia2 == $request->dia13) or 
-                        ($quinze_dias->dia3== $request->dia13) or 
-                        ($quinze_dias->dia4 == $request->dia13) or 
-                        ($quinze_dias->dia5== $request->dia13) or 
-                        ($quinze_dias->dia6 == $request->dia13) or 
-                        ($quinze_dias->dia7== $request->dia13) or
-                        ($quinze_dias->dia8 == $request->dia13) or
-                        ($quinze_dias->dia9== $request->dia13) or
-                        ($quinze_dias->dia10 == $request->dia13) or
-                        ($quinze_dias->dia11== $request->dia13) or
-                        ($quinze_dias->dia12 == $request->dia13) or 
-                        ($quinze_dias->dia13== $request->dia13) or 
-                        ($quinze_dias->dia14 == $request->dia13) or
-                        ($quinze_dias->dia15== $request->dia13) or
-                        ($quinze_dias->dia15 == $request->dia13) ){
+                        ($quinze_d->dia2 == $request->dia13) or 
+                        ($quinze_d->dia3== $request->dia13) or 
+                        ($quinze_d->dia4 == $request->dia13) or 
+                        ($quinze_d->dia5== $request->dia13) or 
+                        ($quinze_d->dia6 == $request->dia13) or 
+                        ($quinze_d->dia7== $request->dia13) or
+                        ($quinze_d->dia8 == $request->dia13) or
+                        ($quinze_d->dia9== $request->dia13) or
+                        ($quinze_d->dia10 == $request->dia13) or
+                        ($quinze_d->dia11== $request->dia13) or
+                        ($quinze_d->dia12 == $request->dia13) or 
+                        ($quinze_d->dia13== $request->dia13) or 
+                        ($quinze_d->dia14 == $request->dia13) or
+                        ($quinze_d->dia15== $request->dia13) or
+                        ($quinze_d->dia15 == $request->dia13) ){
 
                     $qtd_r++;
                   }
 
 
                    if(($quinze_d->dia1 == $request->dia14) or 
-                        ($quinze_dias->dia2 == $request->dia14) or 
-                        ($quinze_dias->dia3== $request->dia14) or 
-                        ($quinze_dias->dia4 == $request->dia14) or 
-                        ($quinze_dias->dia5== $request->dia14) or 
-                        ($quinze_dias->dia6 == $request->dia14) or 
-                        ($quinze_dias->dia7== $request->dia14) or
-                        ($quinze_dias->dia8 == $request->dia14) or
-                        ($quinze_dias->dia9== $request->dia14) or
-                        ($quinze_dias->dia10 == $request->dia14) or
-                        ($quinze_dias->dia11== $request->dia14) or
-                        ($quinze_dias->dia12 == $request->dia14) or 
-                        ($quinze_dias->dia13== $request->dia14) or 
-                        ($quinze_dias->dia14 == $request->dia14) or
-                        ($quinze_dias->dia15== $request->dia14) or
-                        ($quinze_dias->dia15 == $request->dia14) ){
+                        ($quinze_d->dia2 == $request->dia14) or 
+                        ($quinze_d->dia3== $request->dia14) or 
+                        ($quinze_d->dia4 == $request->dia14) or 
+                        ($quinze_d->dia5== $request->dia14) or 
+                        ($quinze_d->dia6 == $request->dia14) or 
+                        ($quinze_d->dia7== $request->dia14) or
+                        ($quinze_d->dia8 == $request->dia14) or
+                        ($quinze_d->dia9== $request->dia14) or
+                        ($quinze_d->dia10 == $request->dia14) or
+                        ($quinze_d->dia11== $request->dia14) or
+                        ($quinze_d->dia12 == $request->dia14) or 
+                        ($quinze_d->dia13== $request->dia14) or 
+                        ($quinze_d->dia14 == $request->dia14) or
+                        ($quinze_d->dia15== $request->dia14) or
+                        ($quinze_d->dia15 == $request->dia14) ){
 
                     $qtd_r++;
                   }
 
                    if(($quinze_d->dia1 == $request->dia15) or 
-                        ($quinze_dias->dia2 == $request->dia15) or 
-                        ($quinze_dias->dia3== $request->dia15) or 
-                        ($quinze_dias->dia4 == $request->dia15) or 
-                        ($quinze_dias->dia5== $request->dia15) or 
-                        ($quinze_dias->dia6 == $request->dia15) or 
-                        ($quinze_dias->dia7== $request->dia15) or
-                        ($quinze_dias->dia8 == $request->dia15) or
-                        ($quinze_dias->dia9== $request->dia15) or
-                        ($quinze_dias->dia10 == $request->dia15) or
-                        ($quinze_dias->dia11== $request->dia15) or
-                        ($quinze_dias->dia12 == $request->dia15) or 
-                        ($quinze_dias->dia13== $request->dia15) or 
-                        ($quinze_dias->dia14 == $request->dia15) or
-                        ($quinze_dias->dia15== $request->dia15) or
-                        ($quinze_dias->dia15 == $request->dia15) ){
+                        ($quinze_d->dia2 == $request->dia15) or 
+                        ($quinze_d->dia3== $request->dia15) or 
+                        ($quinze_d->dia4 == $request->dia15) or 
+                        ($quinze_d->dia5== $request->dia15) or 
+                        ($quinze_d->dia6 == $request->dia15) or 
+                        ($quinze_d->dia7== $request->dia15) or
+                        ($quinze_d->dia8 == $request->dia15) or
+                        ($quinze_d->dia9== $request->dia15) or
+                        ($quinze_d->dia10 == $request->dia15) or
+                        ($quinze_d->dia11== $request->dia15) or
+                        ($quinze_d->dia12 == $request->dia15) or 
+                        ($quinze_d->dia13== $request->dia15) or 
+                        ($quinze_d->dia14 == $request->dia15) or
+                        ($quinze_d->dia15== $request->dia15) or
+                        ($quinze_d->dia15 == $request->dia15) ){
 
                     $qtd_r++;
                   }
@@ -412,7 +412,7 @@ class Agendamento15DiasController extends Controller
 
             //validando de 15 dias com 3 dias  
 
-            foreach($$agendamento_3_dias1 as $agend_3_dias) 
+            foreach($agendamento_3_dias1 as $agend_3_dias) 
             {
 
             if(($request->dia1 ==$agend_3_dias->dia1) or 
@@ -433,11 +433,11 @@ class Agendamento15DiasController extends Controller
 
                 ($request->dia5==$agend_3_dias->dia1) or 
                 ($request->dia5==$agend_3_dias->dia2) or 
-                ($request->dia5==$agend_3_dias->dia3)
+                ($request->dia5==$agend_3_dias->dia3) or
 
                 ($request->dia6==$agend_3_dias->dia1) or 
                 ($request->dia6==$agend_3_dias->dia2) or 
-                ($request->dia6==$agend_3_dias->dia3)                
+                ($request->dia6==$agend_3_dias->dia3) or               
 
                 ($request->dia7==$agend_3_dias->dia1) or 
                 ($request->dia7==$agend_3_dias->dia2) or 
