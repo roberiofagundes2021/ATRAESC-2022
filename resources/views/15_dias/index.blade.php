@@ -87,25 +87,27 @@
     <aside class="app-sidebar">
       
      <ul class="app-menu">
-       <img src="{{ URL::asset('img/agendar_aula.jpg'); }}"
+        <li><a class="app-menu__item" href="{{route('dashboard')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">dashboard</span></a></li>
+        <img src="{{ URL::asset('img/agendar_aula.jpg'); }}"
         style="width:350px; height:150px;"><br></a>
-        <li><a class="app-menu__item" href="#"><i class=""></i><span class="app-menu__label">Home</span></a>
-        </li>
 
-        <li><a class="app-menu__item" href="{{route('EmpresaAtraesc')}}"><i class=""></i><span class="app-menu__label">Empresa</span></a>
+        <li><a class="app-menu__item" href="{{route('Agendamento15Dias.index')}}"><i class=""></i><span class="app-menu__label">agendamentos de 15 dias</span></a>
         </li>
-
-        <li><a class="app-menu__item" href="{{route('Automovel_atraesc.index')}}"><i class=""></i><span class="app-menu__label">Carro</span></a>
+        
         </li>
-
-         <li><a class="app-menu__item" href="{{route('feriado.index')}}"><i class=""></i><span class="app-menu__label">Dias não uteis</span></a>
-        </li>
-
           <li><a class="app-menu__item" href="{{route('Agendamento3Dias.index')}}"><i class=""></i><span class="app-menu__label">agendamentos de 3 dias</span></a>
         </li>
 
-
-          <li><a class="app-menu__item" href="{{route('Agendamento15Dias.index')}}"><i class=""></i><span class="app-menu__label">agendamentos de 15 dias</span></a>
+         <img src="{{ URL::asset('img/clientes.jpg'); }}"
+        style="width:350px; height:150px;"><br></a>
+        <li><a class="app-menu__item" href="{{route('Cliente.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Cliente</span></a></li>
+        <li><a class="app-menu__item" href="{{route('Empresa.create')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Alugar carro</span></a>
+        </li>
+        <li><a class="app-menu__item" href="{{route('Instrutor.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Instrutor</span></a>
+        </li>
+        </li>
+        <li><a class="app-menu__item" href="{{route('Empresa')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">empresa
+        </span></a>
         </li>
       </ul>
     </aside>

@@ -91,7 +91,7 @@
         <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Home</span></a>
         </li>
 
-        <li><a class="app-menu__item" href="{{route('Automovel_atraesc.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Empresa</span></a>
+        <li><a class="app-menu__item" href="{{route('EmpresaAtraesc')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Empresa</span></a>
         </li>
 
         <li><a class="app-menu__item" href="{{route('Automovel_atraesc.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Carro</span></a>
@@ -99,15 +99,6 @@
 
          <li><a class="app-menu__item" href="{{route('feriado.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Dias não uteis</span></a>
         </li>
-
-         <li><a class="app-menu__item" href="{{route('Agendamento3Dias.index')}}"><i class=""></i><span class="app-menu__label">agendamentos de 3 dias</span></a>
-        </li>
-
-
-          <li><a class="app-menu__item" href="{{route('Agendamento15Dias.index')}}"><i class=""></i><span class="app-menu__label">agendamentos de 15 dias</span></a>
-        </li>
-
-
       </ul>
     </aside>
     <main class="app-content">
