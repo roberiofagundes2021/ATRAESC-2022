@@ -115,21 +115,29 @@
       <div class="app-title">
         <div>
           <x-app-layout>
-            <table class="table table-sm">
+            <style>
+              .index{
+                height:10px;
+                position: absolute; top: 220px; left: auto;
+                
+              }
+            
+            </style>
+            <table class="index">
 
                 @foreach($agendamento_3_dias as $agen3dias)
                   <thead>
                     <tr>
                                   
-                    <th> dia 1</th><br>
-                    <th> dia 2</th>
-                    <th> dia 3</th>
-                     <th>data e hora que foi agendado</th>
-                     <th>automovel</th>
-                     <th></th>
-                     <th></th>
-                     <th></th>
-                    </tr>
+                    <th class="table-primary"> dia 1</th><br>
+                    <th class="table-primary"> dia 2</th>
+                    <th class="table-primary"> dia 3</th>
+                     <th class="table-primary">data e hora que foi agendado</th>
+                     <th class="table-primary">automovel</th>
+                     <th class="table-primary"></th>
+                     <th class="table-primary"></th>
+                     <th class="table-primary"></th>
+                    </tr class="table-primary">
                   </thead>
                   <thead>
                

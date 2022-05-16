@@ -115,33 +115,59 @@
       <div class="app-title">
         <div>
           <x-app-layout>
-            <table class="table table-sm">
-
-
-
- 
-
-
+            <style>
+              .index{
+                height:10px;
+                position: absolute; top: 220px; left: auto;
+                
+              }
+            
+            </style>
+            <form action="{{route('Instrutor.create')}}" method="post">
+              @csrf
+              <input type="submit" class="btn btn-primary" name="formulario" value="cadastrar novo Instrutor">
+              </form>
+            <table class="index">
                 @foreach($instrutor as $instru)
                 <thead>
                   <tr>
-                  <th>nome</th>
-                  <th>cpf</th><br>
-                  <th>rg</th><br>
-                  <th>habilitacao</th>
-                  <th>cpf</th>
-                   <th></th>
-                   <th></th>
+                  <th class="table-primary">nome</th>
+                  <th class="table-primary"></th>
+                  <th class="table-primary"></th>
+                  <th class="table-primary">cpf</th><br>
+                  <th class="table-primary"></th>
+                  <th class="table-primary"></th>
+                  <th class="table-primary">rg</th><br>
+                  <th class="table-primary"></th>
+                  <th class="table-primary"></th>
+                  <th class="table-primary">habilitacao</th><br>
+                  <th class="table-primary"></th>
+                  <th class="table-primary"></th>
+                  <th class="table-primary">cpf</th>
+                   <th class="table-primary"></th>
+                   <th class="table-primary"></th>
+                   <th class="table-primary"></th>
+                   <th class="table-primary"></th>
+                   
                   </tr>
                 </thead>
 
                 <thead>
                   <td>{{$instru->nome}}</td>
+                  <td></td>
+                  <td></td>
                   <td>{{$instru->cpf}}</td>
+                  <td></td>
+                   <td></td>
                   <td>{{$instru->rg}}</td>
+                  <td></td>
+                  <td></td>
                   <td>{{$instru->habilitacao}}</td>
+                  <td></td>
+                  <td></td>
                   <td>{{$instru->cpf}}</td>
-
+                  <td></td>
+                  <td></td>
 
                   <td>
                     <form action="{{route('Instrutor.delete', ['id' => $instru->id])}}" method="post">
@@ -161,10 +187,7 @@
                 </thead>
             </table>
 
-              <form action="{{route('Instrutor.create')}}" method="post">
-              @csrf
-              <input type="submit" class="btn btn-primary" name="formulario" value="cadastrar novo Instrutor">
-              </form>
+              
             </div>        
  
         <x-slot name="header">

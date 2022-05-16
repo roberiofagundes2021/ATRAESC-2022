@@ -115,21 +115,29 @@
       <div class="app-title">
         <div>
           <x-app-layout>
-            <table class="table table-sm">
-
- 
-
-
+            <style>
+              .index{
+                height:10px;
+                position: absolute; top: 220px; left: auto;
+                
+              }
+            
+            </style>
+            <form action="{{route('Cliente.create')}}" method="post">
+              @csrf
+              <input type="submit" class="btn btn-primary" name="formulario" value="cadastrar novo cliente">
+              </form>
+            <table class="index">
                 @foreach($cliente as $client)
                 <thead>
                   <tr>
-                  <th>nome</th>
-                  <th>renach</th><br>
-                  <th>idade</th><br>
-                  <th>sexo</th>
-                  <th>cpf</th>
-                   <th></th>
-                   <th></th>
+                  <th class="table-primary">nome</th>
+                  <th class="table-primary">renach</th><br>
+                  <th class="table-primary">idade</th><br>
+                  <th class="table-primary">sexo</th>
+                  <th class="table-primary">cpf</th>
+                   <th class="table-primary"></th>
+                   <th class="table-primary"></th>
                   </tr>
                 </thead>
 
@@ -159,10 +167,7 @@
                 </thead>
             </table>
 
-              <form action="{{route('Cliente.create')}}" method="post">
-              @csrf
-              <input type="submit" class="btn btn-primary" name="formulario" value="cadastrar novo cliente">
-              </form>
+              
             </div>        
  
         <x-slot name="header">

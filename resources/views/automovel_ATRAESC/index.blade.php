@@ -86,10 +86,10 @@
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
       
-       <ul class="app-menu">
+      <ul class="app-menu">
         <img src="{{ URL::asset('img/agendar_aula.jpg'); }}"
         style="width:350px; height:150px;"><br></a>
-        <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Home</span></a>
+        <li><a class="app-menu__item" href="{{route('ATRAESC')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Home</span></a>
         </li>
 
         <li><a class="app-menu__item" href="{{route('EmpresaAtraesc')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Empresa</span></a>
@@ -106,18 +106,30 @@
       <div class="app-title">
         <div>
           <x-app-layout>
-            <table class="table table-sm">
+            <style>
+              .index{
+                height:10px;
+                position: absolute; top: 220px; left: auto;
+                
+              }
+            
+            </style>
+            <form action="{{route('Automovel_atraesc.create')}}" method="post">
+              @csrf
+              <input type="submit" class="btn btn-primary" name="formulario" value="cadastrar novo automovel">
+              </form>
+            <table class="index">
 
                 @foreach($automovel as $auto)
                 <thead>
                   <tr>
-                  <th>modelo</th>
-                  <th>marca</th><br>
-                  <th>ano</th><br>
-                  <th>placa</th>
-                  <th>cor</th>
-                   <th></th>
-                   <th></th>
+                  <th class="table-primary">modelo</th>
+                  <th class="table-primary">marca</th><br>
+                  <th class="table-primary">ano</th><br>
+                  <th class="table-primary">placa</th>
+                  <th class="table-primary">cor</th>
+                   <th class="table-primary"></th>
+                   <th class="table-primary"></th>
                   </tr>
                 </thead>
 
@@ -146,10 +158,7 @@
                 </thead>
             </table>
 
-              <form action="{{route('Automovel_atraesc.create')}}" method="post">
-              @csrf
-              <input type="submit" class="btn btn-primary" name="formulario" value="cadastrar novo automovel">
-              </form>
+              
             </div>        
  
         <x-slot name="header">

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreAgendamento_15_diasRequest;
 use App\Models\Agendamento_15_dias;
 use App\Models\Agendamento_3_dias;
 use App\Models\Contrato;
@@ -12,11 +11,7 @@ use DB;
 
 class Agendamento15DiasController extends Controller
 {
-   /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
         //
@@ -33,11 +28,7 @@ class Agendamento15DiasController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
         //
@@ -47,12 +38,7 @@ class Agendamento15DiasController extends Controller
          return view('15_dias.index',compact(['agendamento_15_dias']));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreAgendamento_15_diasRequest  $request
-     * @return \Illuminate\Http\Response
-     */
+    
   public function store(Request $request)
     {
         //
@@ -521,17 +507,8 @@ class Agendamento15DiasController extends Controller
 
   }
     
-    public function show()
-    {
-        //
-    }
+    
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Agendamento_15_dias  $agendamento_15_dias
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $Agendamento_15_dia = Agendamento_15_dias::findorFail($id);

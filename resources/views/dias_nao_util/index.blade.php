@@ -89,7 +89,7 @@
       <ul class="app-menu">
         <img src="{{ URL::asset('img/agendar_aula.jpg'); }}"
         style="width:350px; height:150px;"><br></a>
-        <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Home</span></a>
+        <li><a class="app-menu__item" href="{{route('ATRAESC')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Home</span></a>
         </li>
 
         <li><a class="app-menu__item" href="{{route('EmpresaAtraesc')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Empresa</span></a>
@@ -106,17 +106,29 @@
       <div class="app-title">
         <div>
           <x-app-layout>
-            <table class="table table-sm">
+            <style>
+              .index{
+                height:10px;
+                position: absolute; top: 220px; left: auto;
+                
+              }
+            
+            </style>
+             <form action="{{route('feriado.create')}}" method="post">
+              @csrf
+              <input type="submit" class="btn btn-primary" name="formulario" value="cadastrar novo dias não util">
+              </form>
+            <table class="index">
 
                 @foreach($feriado as $feriad)
                 <thead>
                   <tr>
-                  <th>nome do feriado</th><br>
-                  <th>data</th><br>
+                  <th class="table-primary">nome do feriado</th><br>
+                  <th class="table-primary">data</th><br>
                   
-                   <th></th>
-                   <th></th>
-                   <th></th>
+                   <th class="table-primary"></th>
+                   <th class="table-primary"></th>
+                   <th class="table-primary"></th>
                   </tr>
                 </thead>
 
@@ -141,10 +153,7 @@
                 </thead>
             </table>
 
-              <form action="{{route('feriado.create')}}" method="post">
-              @csrf
-              <input type="submit" class="btn btn-primary" name="formulario" value="cadastrar novo dias não util">
-              </form>
+             
             </div>        
  
         <x-slot name="header">

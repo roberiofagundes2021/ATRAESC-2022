@@ -118,10 +118,10 @@
                 @foreach($agendamento_3_dias as $agen3dias)
                 <thead>
                   <tr>
-                  <th>empresa</th>                    
-                  <th> dia 1</th><br>
-                  <th> dia 2</th>
-                  <th> dia 3</th>
+                  <th class="table-primary">empresa</th>                    
+                  <th class="table-primary"> dia 1</th><br>
+                  <th class="table-primary"> dia 2</th>
+                  <th class="table-primary"> dia 3</th>
                 
                    <th>data e hora que foi agendado</th>
 

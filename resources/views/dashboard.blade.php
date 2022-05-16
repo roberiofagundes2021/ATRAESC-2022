@@ -127,7 +127,7 @@
             
             <img src="{{ URL::asset('images/calendario.jpg'); }}"
         style="width:450px; height:150px;"><br></a>
-        <a href="">agendar aula</a>
+       
                       
         </x-slot>
                     

@@ -115,32 +115,44 @@
       <div class="app-title">
         <div>
           <x-app-layout>
-            <table class="table table-sm">
-
+            <style>
+              .index{
+                height:10px;
+                position: absolute; top: 220px; left: auto;
+                
+              }
+            
+            </style>
+            <table class="index">
+              <div class="container-fluid  py-3">
+                <div class="container">
+           
                 @foreach($agendamento_15_dias as $agen15dias)
                 <thead>
                   <tr>
-                  <th>empresa</th>                    
-                  <th> dia 1</th><br>
-                  <th> dia 2</th>
-                  <th> dia 3</th>
-                  <th> dia 4</th>
-                  <th> dia 5</th>
-                  <th> dia 6</th>
-                  <th> dia 7</th>
-                  <th> dia 8</th>
-                  <th> dia 9</th>
-                  <th> dia 10</th>
-                  <th> dia 11</th>
-                  <th> dia 12</th>
-                  <th> dia 13</th>
-                  <th> dia 14</th>
-                  <th> dia 15</th>
-                   <th>data e hora que foi agendado</th>
-
-                   <th></th>
-                   <th></th>
-                   <th></th>
+                  <th class="table-primary">empresa</th>                    
+                  <th class="table-primary"> dia 1</th><br>
+                  <th class="table-primary"> dia 2</th>
+                  <th class="table-primary"> dia 3</th>
+                  <th class="table-primary"> dia 4</th>
+                  <th class="table-primary"> dia 5</th>
+                  <th class="table-primary"> dia 6</th>
+                  <th class="table-primary"> dia 7</th>
+                  <th class="table-primary"> dia 8</th>
+                  <th class="table-primary"> dia 9</th>
+                  <th class="table-primary"> dia 10</th>
+                  <th class="table-primary"> dia 11</th>
+                  <th class="table-primary"> dia 12</th>
+                  <th class="table-primary"> dia 13</th>
+                  <th class="table-primary"> dia 14</th>
+                  <th class="table-primary"> dia 15</th>
+                  <th class="table-primary">data e hora que foi agendado</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
                   </tr>
                 </thead>
 
@@ -176,11 +188,12 @@
                       @method('DELETE')   
                       <input type="submit" class="btn btn-primary" value="deletar">
                     </form> 
-                
+                 
                   @endforeach  
                 </thead>
             </table>
-
+          </div>
+        </div>
               
             </div>        
  

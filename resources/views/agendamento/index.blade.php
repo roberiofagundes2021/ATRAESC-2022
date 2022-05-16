@@ -120,9 +120,9 @@
                 @foreach($agendamento as $agend)
                 <thead>
                   <tr>
-                  <th>nome</th><br>
-                  <th>marca</th><br>
-                  <th>modelo</th>
+                  <th class="table-primary">nome</th><br>
+                  <th class="table-primary">marca</th><br>
+                  <th class="table-primary">modelo</th>
                   <th>placa</th>
                    <th></th>
                    <th></th>

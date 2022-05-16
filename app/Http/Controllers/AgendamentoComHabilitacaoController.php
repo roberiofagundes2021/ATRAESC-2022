@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreAgendamento_Com_HabilitacaoRequest;
+use App\Http\Requests\StoreAgendamento_com_HabilitacaoRequest;
 use App\Models\Agendamento_Com_Habilitacao;
-
+use App\Models\Automovel;
 class AgendamentoComHabilitacaoController extends Controller
 {
     /**
@@ -71,7 +71,7 @@ class AgendamentoComHabilitacaoController extends Controller
      * @param  \App\Models\Agendamento_Com_Habilitacao  $agendamento_Com_Habilitacao
      * @return \Illuminate\Http\Response
      */
-    public function edit(Agendamento_Com_Habilitacao $agendamento_Com_Habilitacao)
+    public function edit($id)
     {
         //
         $Agendamento_Com_Habilitacao=Agendamento_Com_Habilitacao::findorFail($id);
@@ -85,7 +85,7 @@ class AgendamentoComHabilitacaoController extends Controller
      * @param  \App\Models\Agendamento_Com_Habilitacao  $agendamento_Com_Habilitacao
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAgendamento_Com_HabilitacaoRequest $request, Agendamento_Com_Habilitacao $agendamento_Com_Habilitacao)
+    public function update(Request $request, $id)
     {
         //
         Agendamento_Com_Habilitacao::find($request->id)->update($request->except('_token'));
@@ -98,7 +98,7 @@ class AgendamentoComHabilitacaoController extends Controller
      * @param  \App\Models\Agendamento_Com_Habilitacao  $agendamento_Com_Habilitacao
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Agendamento_Com_Habilitacao $agendamento_Com_Habilitacao)
+    public function destroy($id)
     {
         //
         Agendamento_Com_Habilitacao::findorFail($id)->delete();

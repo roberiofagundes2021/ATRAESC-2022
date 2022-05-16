@@ -85,10 +85,10 @@
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
       
-     <ul class="app-menu">
+      <ul class="app-menu">
         <img src="{{ URL::asset('img/agendar_aula.jpg'); }}"
         style="width:350px; height:150px;"><br></a>
-        <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Home</span></a>
+        <li><a class="app-menu__item" href="{{route('ATRAESC')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Home</span></a>
         </li>
 
         <li><a class="app-menu__item" href="{{route('EmpresaAtraesc')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Empresa</span></a>

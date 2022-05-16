@@ -59,7 +59,7 @@ class Agendamento3DiasController extends Controller
 
 
 
-  public function store(Request $request)
+    public function store(Request $request)
     {
      
         $agendamento_3_dias = new Agendamento_3_dias();
@@ -238,6 +238,8 @@ class Agendamento3DiasController extends Controller
     }
 
 
+
+
   
     public function show(Agendamento_3_dias $agendamento_3_dias)
     {
@@ -295,6 +297,10 @@ class Agendamento3DiasController extends Controller
            
             
                   }
+                  
+                  if ($qtd_r > 0) {
+                    return redirect()->back()->withErrors(['msg' => 'este carro ja foi agendado nestas datas']);
+                }  
              } 
             
             
@@ -378,16 +384,13 @@ class Agendamento3DiasController extends Controller
 
                             $qtd_r++;
 
-                }                
+                }  
+                if ($qtd_r > 0) {
+                    return redirect()->back()->withErrors(['msg' => 'este carro ja foi agendado nestas datas']);
+                }  
             }
 
-             if ($qtd_r > 0) {
-                 return redirect()->back()->withErrors(['msg' => 'este carro ja foi agendado nestas datas']);
-                 /*
-                  return Redirect::back()->withErrors(['msg' => 'The Message']);*/
-                 /*
-                 return redirect()->route('Empresa')->with('alert-danger','as datas que você escolheu ja esta agendada no sistema para esse carro retorne e tente novamente com outro carro');*/
-             }  
+           
 
          $agendamento_3_dias->save();
 
@@ -403,12 +406,7 @@ class Agendamento3DiasController extends Controller
         return view('3_dias.index',compact('agendamento_3_dias'));
     }//final do metodo update
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Agendamento_3_dias  $agendamento_3_dias
-     * @return \Illuminate\Http\Response
-     */
+   
     public function destroy($id)
     {
         $agendamento_3_dias=agendamento_3_dias::findOrFail($id);

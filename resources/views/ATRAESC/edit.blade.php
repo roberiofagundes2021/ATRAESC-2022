@@ -91,13 +91,13 @@
         <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Home</span></a>
         </li>
 
-        <li><a class="app-menu__item" href="{{route('Empresa')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Empresa</span></a>
+        <li><a class="app-menu__item" href="{{route('EmpresaAtraesc')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Empresa</span></a>
         </li>
 
         <li><a class="app-menu__item" href="{{route('Automovel_atraesc.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Carro</span></a>
         </li>
 
-         <li><a class="app-menu__item" href="{{route('feriado.create')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Dias não uteis</span></a>
+         <li><a class="app-menu__item" href="{{route('feriado.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Dias não uteis</span></a>
         </li>
       </ul>
     </aside>

@@ -115,22 +115,37 @@
       <div class="app-title">
         <div>
           <x-app-layout>
-            @include('alert.alert')
-            <table class="table table-sm">
+            <x-slot name="header">
+            
+            <style>
+              .index{
+                height:10px;
+                position: absolute; top: 220px; left: auto;
+                
+              }
+            
+            </style>
+            <form action="{{route('Empresa.create')}}" method="post">
+              @csrf
+              <input type="submit" class="btn btn-primary" name="formulario" value="cadastrar nova empresa">
+              </form>
+            <table class="index">
+              <div class="container-fluid  py-3">
+                <div class="container">
 
                 @foreach($empresa as $emp)
                 <thead>
                   <tr>
-                  <th>razao social</th><br>
-                  <th>cnpj</th><br>
-                  <th>solicitante</th>
-                  <th>telefone</th>
-                  <th>email</th>
+                  <th class="table-primary">razao social</th><br>
+                  <th class="table-primary">cnpj</th><br>
+                  <th class="table-primary">solicitante</th>
+                  <th class="table-primary">telefone</th>
+                  <th class="table-primary">email</th>
                 
-                   <th></th>
-                   <th></th>
-                   <th></th>
-                  </tr>
+                   <th class="table-primary"></th>
+                   <th class="table-primary"></th>
+                   <th class="table-primary"></th>
+                  </tr class="table-primary">
                 </thead>
 
                 <thead>
@@ -163,14 +178,13 @@
                     </td>
                 @endforeach  
                 </thead>
+               
             </table>
-
-              <form action="{{route('Empresa.create')}}" method="post">
-              @csrf
-              <input type="submit" class="btn btn-primary" name="formulario" value="cadastrar nova empresa">
-              </form>
-            </div>        
- 
+          </div>        
+        </div>
+             
+          
+        </div>
         <x-slot name="header">
               
          
