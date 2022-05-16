@@ -7,6 +7,8 @@ use App\Models\Agendamento_3_dias;
 use App\Models\Contrato;
 use App\Models\Feriado;
 use App\Models\Automovel;
+use App\Models\Empresa;
+use App\Models\EnderecoEmpresa;
 use DB;
 
 class Agendamento15DiasController extends Controller
@@ -483,7 +485,10 @@ class Agendamento15DiasController extends Controller
 
              if ($qtd_r > 0) {
                  
-                 return redirect()->route('Empresa')->with('alert-danger','as datas que você escolheu ja esta agendada no sistema para esse carro retorne e tente novamente com outro carro');
+              $automovel=Automovel::get();
+              $empresa = Empresa::where('id',$request->empresa_id)->first();
+              $enderecoempresa = EnderecoEmpresa::where('empresa_id', $empresa->id)->first();
+               return view('15_dias.create',compact('automovel','empresa','enderecoempresa'))->withErrors(['msg' => 'este carro já esta agendado nessas datas escolhidas por você! voce pode ou escolher outras datas ou outros carros! tente novamente com outras datas ou outros carro']);
              }  
 
 
